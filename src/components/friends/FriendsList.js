@@ -20,7 +20,7 @@ class FriendsList extends Component {
     deleteFriend = id => {
         FriendsManager.delete(id)
         .then(() => {
-          FriendsManager.getAll()
+          FriendsManager.getFriends()
           .then((newFriends) => {
             this.setState({
                 friends: newFriends
@@ -32,7 +32,7 @@ class FriendsList extends Component {
     componentDidMount(){
         console.log("Friends LIST: ComponentDidMount");
         //getAll from FriendsManager and hang on to that data; put it in state
-        FriendsManager.getAll()
+        FriendsManager.getFriends()
         .then((friends) => {
             this.setState({
                 friends: friends

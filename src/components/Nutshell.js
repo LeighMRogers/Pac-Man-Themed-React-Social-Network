@@ -4,7 +4,6 @@ import ApplicationViews from './ApplicationViews';
 import './Nutshell.css';
 import Login from './auth/Login';
 import Registration from './auth/Registration';
-import ArticleList from './articles/ArticlesList';
 
 class Nutshell extends Component {
 	state = {
