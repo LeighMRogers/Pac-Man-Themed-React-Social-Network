@@ -4,11 +4,11 @@ import ApplicationViews from './ApplicationViews';
 import './Nutshell.css';
 import Login from './auth/Login';
 import Registration from './auth/Registration';
-import NewsList from './news/NewsList';
+import ArticleList from './articles/ArticleList';
 
 class Nutshell extends Component {
 	state = {
-		userName: sessionStorage.getItem('activeUser') !== null
+		user: sessionStorage.getItem('activeUser') !== null
 	};
 	// Check if credentials are in session storage
 	//returns true/false
@@ -43,7 +43,6 @@ class Nutshell extends Component {
 					<>
 						<Login setUser={this.setUser} user={this.state.user} />
 						<Registration setUser={this.setUser} user={this.state.user} />
-						<NewsList />
 					</>
 				)}
 			</React.Fragment>
