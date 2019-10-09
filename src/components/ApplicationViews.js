@@ -1,40 +1,57 @@
 import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
-
+import EventsList from "./events/EventsList"
+import Login from "./auth/Login"
+import TasksList from "./tasks/TasksList"
+import NewsList from "./news/NewsList"
+import MessagesList from "./messages/MessagesList"
+//this file will handle the application views for out nav bar,
+//friends list is absent because it will live on the Nav Bar
 export default class ApplicationViews extends Component {
 
   render() {
     return (
       <React.Fragment>
 
-        <Route
-          exact path="/" render={props => {
-            return null
-            // Remove null and return the component which will show news articles
+        <Route exact path="/" render={props => {
+            return <Login />
+          }}
+        />
+        {/* begin news */}
+        <Route exact path="/news" render={props => {
+          if (this.props.userName) {
+            return <NewsList {...props} />
+          } else {
+            return <Redirect to="/login" />
+          }
+        }} />
+        {/* end news */}
+        <Route exact path="/events" render={props => {
+          if (this.props.userName) {
+            return <EventsList {...props} />
+          } else {
+            return <Redirect to="/login" />
+          }
           }}
         />
 
-        <Route
-          path="/friends" render={props => {
-            return null
-            // Remove null and return the component which will show list of friends
+        <Route path="/messages" render={props => {
+          if (this.props.userName) {
+            return <MessagesList {...props} />
+          } else {
+            return <Redirect to="/login" />
+          }
           }}
         />
 
-        <Route
-          path="/messages" render={props => {
-            return null
-            // Remove null and return the component which will show the messages
+        <Route path="/tasks" render={props => {
+          if (this.props.userName) {
+            return <TasksList {...props} />
+          } else {
+            return <Redirect to="/login" />
+          }
           }}
         />
-
-        <Route
-          path="/tasks" render={props => {
-            return null
-            // Remove null and return the component which will show the user's tasks
-          }}
-        />
-        
       </React.Fragment>
     );
   }
