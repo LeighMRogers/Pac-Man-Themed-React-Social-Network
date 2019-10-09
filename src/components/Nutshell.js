@@ -19,6 +19,7 @@ class Nutshell extends Component {
   }
   //
   clearUser = () => {
+    sessionStorage.removeItem("activeUser");
     this.setState({
       user: this.isAuthenticated()
     });
@@ -31,7 +32,7 @@ class Nutshell extends Component {
         {(this.state.user) ?
           <>
             <NavBar
-              clearUser={this.setUser}
+              clearUser={this.clearUser}
               user={this.state.user}
               {...this.props}/>
             <ApplicationViews />
