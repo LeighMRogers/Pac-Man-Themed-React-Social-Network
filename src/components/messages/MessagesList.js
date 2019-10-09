@@ -5,5 +5,11 @@ class MessagesList extends Component {
     state = {
         messages: [],
     }
+    render() {
+        console.log("Messages LIST: Render");
+        return (
+            <p>Hello you are currently viewing the Messages List</p>
+        )
+    }
 }
 export default MessagesList

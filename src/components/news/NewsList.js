@@ -5,5 +5,11 @@ class NewsList extends Component {
     state = {
         articles: [],
     }
+    render() {
+        console.log("News LIST: Render");
+        return (
+            <p>Hello you are currently viewing the News List</p>
+        )
+    }
 }
 export default NewsList
