@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import NavBar from "./nav/NavBar";
 import ApplicationViews from "./ApplicationViews";
-import Landing from "./auth/Login"
 import "./Nutshell.css";
+import Login from "./auth/Login";
+import Registration from "./auth/Registration"
 
 class Nutshell extends Component {
   state = {
@@ -37,9 +38,15 @@ class Nutshell extends Component {
               {...this.props}/>
             <ApplicationViews />
           </> :
-          <Landing
+          <>
+          <Login
             setUser={this.setUser}
-            user={this.state.user} />}
+            user={this.state.user} />
+            <Registration
+            setUser={this.setUser}
+            user={this.state.user} />
+          </>
+          }
       </React.Fragment>
     );
   }

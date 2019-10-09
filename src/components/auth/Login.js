@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import AuthManager from "../../modules/AuthManager"
+import { Link } from "react-router-dom"
 class Login extends Component {
 
     // Set initial state
@@ -41,6 +42,7 @@ class Login extends Component {
 
     render() {
         return (
+            <>
             <form onSubmit={this.handleLogin}>
                 <fieldset>
                     <h3>Please sign in</h3>
@@ -59,9 +61,11 @@ class Login extends Component {
                     </div>
                     <button type="submit">
                         Sign in
-            </button>
+                    </button>
                 </fieldset>
             </form>
+            <li><Link className="registration-link" to="/register">Registration</Link></li>
+            </>
         )
     }
 
