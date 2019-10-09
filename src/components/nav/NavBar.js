@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Link, withRouter } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
+import FriendsList from "../friends/FriendsList"
 
 
 class NavBar extends Component {

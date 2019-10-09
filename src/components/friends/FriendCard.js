@@ -1,0 +1,1 @@
+// This file is in charge of displaying one friend that is being pulled from FriendsList. It will also contain a delete/"Ghost" button, a profile image/icon, and their name.
