@@ -6,7 +6,6 @@ import "bootstrap/dist/css/bootstrap.min.css"
 class NavBar extends Component {
     handleLogout = () => {
         console.log("handleLogout is being called" , this.props)
-        sessionStorage.removeItem("activeUser");
         this.props.clearUser();
         this.props.history.push('/');
       }
