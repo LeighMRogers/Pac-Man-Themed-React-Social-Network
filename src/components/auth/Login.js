@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import AuthManager from "../../modules/AuthManager"
-import { Link } from "react-router-dom"
+import { Link, withRouter } from "react-router-dom"
 class Login extends Component {
 
     // Set initial state
@@ -36,6 +36,7 @@ class Login extends Component {
                 sessionStorage.setItem("activeUser", response[0].id)
                 console.log(response);
                 this.props.setUser()
+                this.props.history.push(`/news`)
             }
         })
     }
@@ -64,11 +65,11 @@ class Login extends Component {
                     </button>
                 </fieldset>
             </form>
-            <li><Link className="registration-link" to="/register">Registration</Link></li>
+            <Link className="registration-link" to="/register"> Register </Link>
             </>
         )
     }
 
 }
 
-export default Login
+export default withRouter(Login)

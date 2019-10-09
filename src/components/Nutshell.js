@@ -7,7 +7,7 @@ import Registration from "./auth/Registration"
 
 class Nutshell extends Component {
   state = {
-    userName: sessionStorage.getItem("activeUser") !== null
+    user: sessionStorage.getItem("activeUser") !== null
   }
   // Check if credentials are in session storage
   //returns true/false
@@ -36,7 +36,9 @@ class Nutshell extends Component {
               clearUser={this.clearUser}
               user={this.state.user}
               {...this.props}/>
-            <ApplicationViews />
+            <ApplicationViews
+              user={this.state.user}
+              {...this.props}/>
           </> :
           <>
           <Login
