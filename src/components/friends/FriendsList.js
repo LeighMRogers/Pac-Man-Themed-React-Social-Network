@@ -18,9 +18,9 @@ class FriendsList extends Component {
     }
 
     deleteFriend = id => {
-        FriendManager.delete(id)
+        FriendsManager.delete(id)
         .then(() => {
-          FriendManager.getAll()
+          FriendsManager.getAll()
           .then((newFriends) => {
             this.setState({
                 friends: newFriends
