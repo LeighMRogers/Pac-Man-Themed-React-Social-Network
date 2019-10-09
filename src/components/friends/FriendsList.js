@@ -44,6 +44,7 @@ class FriendsList extends Component {
         console.log("Friend Search: Render");
         return(
             <>
+            <h4>Friends</h4>
             {/* //add this button above your display of friend cards */}
             <div className="container-cards">
                 {this.state.friends.map(friend =>

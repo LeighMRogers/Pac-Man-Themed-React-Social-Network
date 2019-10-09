@@ -30,19 +30,20 @@ class Nutshell extends Component {
 		return (
 			<React.Fragment>
 				{this.state.user ? (
-					<>
+					<section className="wrapper">
 						<NavBar
+              className="navBar"
 							clearUser={this.clearUser}
 							user={this.state.user}
 							{...this.props}
 						/>
-						<ApplicationViews user={this.state.user} {...this.props} />
-					</>
+						<ApplicationViews className="mainContainer" user={this.state.user} {...this.props} />
+					</section>
 				) : (
-					<>
+					<section className="landingPage">
 						<Login setUser={this.setUser} user={this.state.user} />
 						<Registration setUser={this.setUser} user={this.state.user} />
-					</>
+					</section>
 				)}
 			</React.Fragment>
 		);

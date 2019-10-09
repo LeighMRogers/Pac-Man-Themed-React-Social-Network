@@ -12,8 +12,9 @@ class NavBar extends Component {
       }
     render() {
         return (
-            <>
-            <nav className="navbar navbar-light light-blue flex-md-nowrap p-0 shadow">
+            <div  className="navWrapper">
+                <div className="logoPlaceholder">Logo Placeholder</div>
+            <nav>
                 <ul className="nav nav-pills nav-fill">
                     <li className="nav-item">
                         <Link className="nav-link" to="/news">News</Link>
@@ -31,7 +32,7 @@ class NavBar extends Component {
                 </ul>
             </nav>
             <FriendsList />
-            </>
+            </div>
         )
     }
 }

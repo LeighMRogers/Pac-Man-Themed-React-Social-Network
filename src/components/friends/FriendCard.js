@@ -9,7 +9,7 @@ class FriendCard extends Component {
 		return (
 			<div>
 				<div>
-					<h3>Name: {this.props.friend.user.name}</h3>
+					<h6>Name: {this.props.friend.user.name}</h6>
 					<button
 						type='button'
 						onClick={() => this.props.deleteFriend(this.props.friend.id)}
