@@ -14,12 +14,12 @@ export default class ApplicationViews extends Component {
       <React.Fragment>
 
         <Route exact path="/" render={props => {
-            return <Login />
+            return <Login {...props} />
           }}
         />
         {/* begin news */}
         <Route exact path="/news" render={props => {
-          if (this.props.userName) {
+          if (this.props.user) {
             return <NewsList {...props} />
           } else {
             return <Redirect to="/login" />
@@ -27,7 +27,7 @@ export default class ApplicationViews extends Component {
         }} />
         {/* end news */}
         <Route exact path="/events" render={props => {
-          if (this.props.userName) {
+          if (this.props.user) {
             return <EventsList {...props} />
           } else {
             return <Redirect to="/login" />
@@ -35,8 +35,8 @@ export default class ApplicationViews extends Component {
           }}
         />
 
-        <Route path="/messages" render={props => {
-          if (this.props.userName) {
+        <Route exact path="/messages" render={props => {
+          if (this.props.user) {
             return <MessagesList {...props} />
           } else {
             return <Redirect to="/login" />
@@ -45,7 +45,7 @@ export default class ApplicationViews extends Component {
         />
 
         <Route path="/tasks" render={props => {
-          if (this.props.userName) {
+          if (this.props.user) {
             return <TasksList {...props} />
           } else {
             return <Redirect to="/login" />
