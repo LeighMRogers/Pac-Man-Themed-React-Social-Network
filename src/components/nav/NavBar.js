@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Link, withRouter } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
+import FriendsList from "../friends/FriendsList"
 
 
 class NavBar extends Component {
@@ -11,7 +12,9 @@ class NavBar extends Component {
       }
     render() {
         return (
-            <nav className="navbar navbar-light light-blue flex-md-nowrap p-0 shadow">
+            <div  className="navWrapper">
+                <div className="logoPlaceholder">Logo Placeholder</div>
+            <nav>
                 <ul className="nav nav-pills nav-fill">
                     <li className="nav-item">
                         <Link className="nav-link" to="/news">News</Link>
@@ -28,6 +31,8 @@ class NavBar extends Component {
                     <button onClick={this.handleLogout}>Logout</button>
                 </ul>
             </nav>
+            <FriendsList />
+            </div>
         )
     }
 }
