@@ -4,7 +4,7 @@ import ApplicationViews from './ApplicationViews';
 import './Nutshell.css';
 import Login from './auth/Login';
 import Registration from './auth/Registration';
-import ArticleList from './articles/ArticleList';
+import ArticleList from './articles/ArticlesList';
 
 class Nutshell extends Component {
 	state = {
@@ -37,7 +37,7 @@ class Nutshell extends Component {
 							user={this.state.user}
 							{...this.props}
 						/>
-						<ApplicationViews />
+						<ApplicationViews user={this.state.user} {...this.props} />
 					</>
 				) : (
 					<>
