@@ -46,7 +46,7 @@ class Login extends Component {
 				//in case of "Steve" it would be "1"
 				console.log('login', this.props);
 				this.props.setUser(response[0].id);
-				// this.props.history.push(`/news`);
+				this.props.history.push(`/news`);
 			}
 		});
 	};

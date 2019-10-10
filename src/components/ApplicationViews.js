@@ -12,7 +12,7 @@ export default class ApplicationViews extends Component {
 	render() {
 		return (
 			<React.Fragment>
-				{/* <Route
+				 {/* <Route
 					exact
 					path='/'
 					render={props => {
@@ -24,7 +24,7 @@ export default class ApplicationViews extends Component {
 				{/* begin news */}
 				<Route
 					exact
-					path='/'
+					path='/news'
 					render={props => {
 
 						return <ArticlesList {...props} activeUser={this.props.activeUser} />;

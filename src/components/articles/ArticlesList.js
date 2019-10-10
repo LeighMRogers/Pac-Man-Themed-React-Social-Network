@@ -33,6 +33,7 @@ class ArticleList extends Component {
 	render() {
 		return (
 			<div className='mainContainer'>
+				<h1>NEWS</h1>
 				<AddArticleForm getData={this.getData} />
 				{this.state.articles.map(article => (
 					<ArticleCard
