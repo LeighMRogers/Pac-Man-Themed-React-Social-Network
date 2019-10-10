@@ -31,7 +31,7 @@ class ArticleList extends Component {
 	render() {
 		return (
 			<div className='mainContainer'>
-				<AddArticleForm />
+				<AddArticleForm getData={this.getData} />
 				{this.state.articles.map(article => (
 					<ArticleCard
 						key={article.id}
