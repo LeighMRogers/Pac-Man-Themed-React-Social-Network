@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ArticleManager from '../../modules/ArticleManager';
 import ArticleCard from './ArticleCard';
+import AddArticleForm from '../articles/AddArticleForm';
 
 class ArticleList extends Component {
 	//define what this component needs to render
@@ -29,7 +30,8 @@ class ArticleList extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className='mainContainer'>
+				<AddArticleForm />
 				{this.state.articles.map(article => (
 					<ArticleCard
 						key={article.id}

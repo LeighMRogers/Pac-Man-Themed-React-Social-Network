@@ -1,75 +1,114 @@
-import React, { Component } from "react"
-import AuthManager from "../../modules/AuthManager"
-import { Link, withRouter } from "react-router-dom"
+import React, { Component } from 'react';
+import AuthManager from '../../modules/AuthManager';
+import Registration from '../auth/Registration';
+import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { Link, withRouter } from 'react-router-dom';
+
 class Login extends Component {
+	// Set initial state
+	state = {
+		userName: '',
+		password: '',
+		hideReg: true
+	};
 
-    // Set initial state
-    state = {
-        userName: "",
-        password: ""
-    }
+	showLogin = () => {
+		this.setState({ hideReg: false });
+	};
 
-    // Update state whenever an input field is edited
-    handleFieldChange = (evt) => {
-        const stateToChange = {}
-        stateToChange[evt.target.id] = evt.target.value
-        this.setState(stateToChange)
-    }
+	hideReg = () => {
+		this.setState({ hideReg: true });
+	};
 
-    handleLogin = (e) => {
-        e.preventDefault()
-        let userName = this.state.userName;
-        let password = this.state.password;
-        AuthManager.getUser(userName).then((response) => {
-            if (response.length === 0) {
-                alert("Please enter a valid User Name.")
-            } else if (response.length === 1 && response[0].password !== password) {
-                alert("Password is incorrect, please try again.")
-                // starting the if statement to check for empty fields//
-            } else if (password === "") {
-                alert("Please fill the Password Form")
-            } else if (userName === "") {
-                alert("Please enter a valid email address")
-            } else if (response[0].password === password) {
-                //response[0].id is the ID of the user you logged in with,
-                //in case of "Steve" it would be "1"
-                sessionStorage.setItem("activeUser", response[0].id)
-                console.log(response);
-                this.props.setUser()
-                this.props.history.push(`/news`)
-            }
-        })
-    }
+	// Update state whenever an input field is edited
+	handleFieldChange = evt => {
+		const stateToChange = {};
+		stateToChange[evt.target.id] = evt.target.value;
+		this.setState(stateToChange);
+	};
 
-    render() {
-        return (
-            <>
-            <form onSubmit={this.handleLogin}>
-                <fieldset>
-                    <h3>Please sign in</h3>
-                    <div className="formgrid">
-                        <input onChange={this.handleFieldChange} type="userName"
-                            id="userName"
-                            placeholder="userName address"
-                            required="" autoFocus="" />
-                        <label htmlFor="inputuserName">User Name</label>
+	handleLogin = e => {
+		e.preventDefault();
+		let userName = this.state.userName;
+		let password = this.state.password;
+		AuthManager.getUser(userName).then(response => {
+			if (response.length === 0) {
+				alert('Please enter a valid User Name.');
+			} else if (response.length === 1 && response[0].password !== password) {
+				alert('Password is incorrect, please try again.');
+				// starting the if statement to check for empty fields//
+			} else if (password === '') {
+				alert('Please fill the Password Form');
+			} else if (userName === '') {
+				alert('Please enter a valid email address');
+			} else if (response[0].password === password) {
+				//response[0].id is the ID of the user you logged in with,
+				//in case of "Steve" it would be "1"
+				sessionStorage.setItem('activeUser', response[0].id);
+				console.log('login', this.props);
+				this.props.setUser();
+				this.props.history.push(`/news`);
+			}
+		});
+	};
 
-                        <input onChange={this.handleFieldChange} type="password"
-                            id="password"
-                            placeholder="Password"
-                            required="" />
-                        <label htmlFor="inputPassword">Password</label>
-                    </div>
-                    <button type="submit">
-                        Sign in
-                    </button>
-                </fieldset>
-            </form>
-            <Link className="registration-link" to="/register"> Register </Link>
-            </>
-        )
-    }
+	render() {
+		return (
+			<>
+				{this.state.hideReg && (
+					<Form
+						onSubmit={this.handleLogin}
+						id='loginForm'
+						className='login-form'
+					>
+						<div className='formField'>
+							<Input
+								prefix={
+									<Icon type='user' style={{ color: 'rgba(0,0,0,.25)' }} />
+								}
+								placeholder='Username'
+								onChange={this.handleFieldChange}
+								type='userName'
+								id='userName'
+								required=''
+								autoFocus=''
+							/>
+						</div>
+						<div className='formField'>
+							<Input
+								prefix={
+									<Icon type='lock' style={{ color: 'rgba(0,0,0,.25)' }} />
+								}
+								type='password'
+								placeholder='Password'
+								onChange={this.handleFieldChange}
+								id='password'
+								required=''
+							/>
+						</div>
+						<div className='formField'>
+							<Checkbox>Remember me</Checkbox>
+							<Button
+								type='primary'
+								htmlType='submit'
+								className='login-form-button'
+							>
+								Log in
+							</Button>
+							Or{' '}
+							<span className='regLink' onClick={this.showLogin} href=''>
+								register now!
+							</span>
+						</div>
+					</Form>
+				)}
 
+				{!this.state.hideReg && (
+					<Registration {...this.props} hideReg={this.hideReg} />
+				)}
+			</>
+		);
+	}
 }
 
-export default withRouter(Login)
+export default withRouter(Login);
