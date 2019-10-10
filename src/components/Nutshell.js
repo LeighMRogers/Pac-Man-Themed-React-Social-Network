@@ -6,49 +6,44 @@ import Login from './auth/Login';
 // import Registration from './auth/Registration';
 
 class Nutshell extends Component {
-	state = {
-		user: sessionStorage.getItem('activeUser') !== null
-	};
-	// Check if credentials are in session storage
-	//returns true/false
-	isAuthenticated = () => sessionStorage.getItem('activeUser') !== null;
 
-	setUser = () => {
-		this.setState({
-			user: this.isAuthenticated()
-		});
-	};
-	//
-	clearUser = () => {
-		sessionStorage.removeItem('activeUser');
-		this.setState({
-			user: this.isAuthenticated()
-		});
-	};
-
+	// state = {
+	// 	activeUser: ""
+	// }
+	// componentDidMount() {
+	// 	this.setUserState()
+	// }
+	// setUserState = () => {
+	// 	this.setState({ activeUser: sessionStorage.getItem('activeUser') })
+	// }
 	render() {
+		console.log("nutshell props:", this.props)
 		return (
 			<React.Fragment>
-				{this.state.user ? (
+				{this.props.isAuthenticated() ? (
 					<section className='wrapper'>
 						<NavBar
 							className='navBar'
-							clearUser={this.clearUser}
-							user={this.state.user}
+							currentUserId={this.props.activeUser}
+							// clearUser={props.clearUser}
+							// user={props.user}
 							{...this.props}
 						/>
 						<ApplicationViews
+							currentUserId={this.props.activeUser}
 							className='mainContainer'
-							user={this.state.user}
+							// user={props.user}
 							{...this.props}
 						/>
 					</section>
 				) : (
-					<section className='landingPage'>
-						<Login setUser={this.setUser} user={this.state.user} />
-						{/* <Registration setUser={this.setUser} user={this.state.user} /> */}
-					</section>
-				)}
+						<section className='landingPage'>
+							<Login
+								// setUser={this.props.setUser} user={props.user}
+								{...this.props} />
+							{/* <Registration setUser={this.setUser} user={this.state.user} /> */}
+						</section>
+					)}
 			</React.Fragment>
 		);
 	}

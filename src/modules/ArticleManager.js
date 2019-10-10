@@ -2,8 +2,8 @@ import FriendsManager from './FriendsManager';
 const remoteURL = 'http://localhost:8088';
 
 export default {
-	getArticles() {
-		let currentUserId = parseInt(sessionStorage.getItem('activeUser'));
+	getArticles(currentUserId) {
+		// let currentUserId = parseInt(sessionStorage.getItem('activeUser'));
 		let currentUserFriends = [];
 		return FriendsManager.getFriends(currentUserId)
 			.then(data => {

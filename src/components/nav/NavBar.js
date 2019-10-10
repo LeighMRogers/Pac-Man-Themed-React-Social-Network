@@ -43,7 +43,7 @@ class NavBar extends Component {
 						</li>
 					</ul>
 				</nav>
-				<FriendsList />
+				<FriendsList currentUserId={this.props.activeUser}/>
 			</div>
 		);
 	}

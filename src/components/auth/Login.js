@@ -44,10 +44,9 @@ class Login extends Component {
 			} else if (response[0].password === password) {
 				//response[0].id is the ID of the user you logged in with,
 				//in case of "Steve" it would be "1"
-				sessionStorage.setItem('activeUser', response[0].id);
 				console.log('login', this.props);
-				this.props.setUser();
-				this.props.history.push(`/news`);
+				this.props.setUser(response[0].id);
+				// this.props.history.push(`/news`);
 			}
 		});
 	};

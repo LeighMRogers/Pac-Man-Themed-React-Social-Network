@@ -10,8 +10,9 @@ class ArticleList extends Component {
 	};
 
 	componentDidMount() {
+		console.log("inside",this.props.activeUser)
 		//getAll from AnimalManager and hang on to that data; put it in state
-		ArticleManager.getArticles().then(articles => {
+		ArticleManager.getArticles(this.props.activeUser).then(articles => {
 			console.log('articles array', articles);
 			this.setState({
 				articles: articles
@@ -20,7 +21,8 @@ class ArticleList extends Component {
 	}
 
 	getData = () => {
-		ArticleManager.getArticles().then(articles => {
+
+		ArticleManager.getArticles(this.props.activeUser).then(articles => {
 			console.log('articles array', articles);
 			this.setState({
 				articles: articles

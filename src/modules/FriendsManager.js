@@ -1,7 +1,7 @@
 const remoteURL = 'http://localhost:8088';
-let currentUserId = parseInt(sessionStorage.getItem('activeUser'));
+
 export default {
-	getFriends() {
+    getFriends(currentUserId) {
 		return fetch(
 			`http://localhost:8088/friends/?friendInitiate=${currentUserId}&_expand=user`
 		).then(response => response.json());
