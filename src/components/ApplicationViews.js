@@ -8,26 +8,26 @@ import MessagesList from './messages/MessagesList';
 //this file will handle the application views for out nav bar,
 //friends list is absent because it will live on the Nav Bar
 export default class ApplicationViews extends Component {
+
 	render() {
 		return (
 			<React.Fragment>
-				<Route
+				 {/* <Route
 					exact
 					path='/'
 					render={props => {
-						return <Login {...props} />;
+						console.log("this is the console log we're looking for", this.props)
+						return <Login {...props}
+						 {...this.props}/>;
 					}}
-				/>
+				/> */}
 				{/* begin news */}
 				<Route
 					exact
 					path='/news'
 					render={props => {
-						if (this.props.user) {
-							return <ArticlesList {...props} />;
-						} else {
-							return <Redirect to='/login' />;
-						}
+
+						return <ArticlesList {...props} activeUser={this.props.activeUser} />;
 					}}
 				/>
 				{/* end news */}
@@ -35,11 +35,8 @@ export default class ApplicationViews extends Component {
 					exact
 					path='/events'
 					render={props => {
-						if (this.props.user) {
-							return <EventsList {...props} />;
-						} else {
-							return <Redirect to='/login' />;
-						}
+
+						return <EventsList {...props} />;
 					}}
 				/>
 
@@ -47,22 +44,17 @@ export default class ApplicationViews extends Component {
 					exact
 					path='/messages'
 					render={props => {
-						if (this.props.user) {
-							return <MessagesList {...props} />;
-						} else {
-							return <Redirect to='/login' />;
-						}
+
+						return <MessagesList {...props} />;
+
 					}}
 				/>
 
 				<Route
 					path='/tasks'
 					render={props => {
-						if (this.props.user) {
-							return <TasksList {...props} />;
-						} else {
-							return <Redirect to='/login' />;
-						}
+
+						return <TasksList {...props} />;
 					}}
 				/>
 			</React.Fragment>

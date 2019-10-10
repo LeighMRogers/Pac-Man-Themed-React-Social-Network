@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Nutshell from './components/Nutshell';
+import Auth from './components/Auth'
 import './index.css';
 import 'antd/dist/antd.css';
 
 ReactDOM.render(
 	<Router>
-		<Nutshell />
+		<Auth />
 	</Router>,
 	document.getElementById('root')
 );
