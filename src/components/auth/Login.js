@@ -55,6 +55,8 @@ class Login extends Component {
 		return (
 			<>
 				{this.state.hideReg && (
+					<>
+					<p>Listen Buddy...you need to log in.</p>
 					<Form
 						onSubmit={this.handleLogin}
 						id='loginForm'
@@ -100,6 +102,7 @@ class Login extends Component {
 							</span>
 						</div>
 					</Form>
+					</>
 				)}
 
 				{!this.state.hideReg && (
