@@ -102,7 +102,7 @@ class Login extends Component {
 						</div>
 					</Form>
 				)}
-				:
+
 				{!this.state.hideReg && (
 					<Registration {...this.props} hideReg={this.hideReg} />
 				)}
