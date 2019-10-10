@@ -12,6 +12,7 @@ export default {
 				});
 			})
 			.then(() => {
+				console.log(currentUserFriends);
 				let searchString = '';
 				currentUserFriends.forEach(id => {
 					searchString += `&userId=${id}`;

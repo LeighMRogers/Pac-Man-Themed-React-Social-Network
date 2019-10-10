@@ -3,8 +3,7 @@ import NavBar from './nav/NavBar';
 import ApplicationViews from './ApplicationViews';
 import './Nutshell.css';
 import Login from './auth/Login';
-import Registration from './auth/Registration';
-import ArticleList from './articles/ArticlesList';
+// import Registration from './auth/Registration';
 
 class Nutshell extends Component {
 	state = {
@@ -31,19 +30,24 @@ class Nutshell extends Component {
 		return (
 			<React.Fragment>
 				{this.state.user ? (
-					<>
+					<section className='wrapper'>
 						<NavBar
+							className='navBar'
 							clearUser={this.clearUser}
 							user={this.state.user}
 							{...this.props}
 						/>
-						<ApplicationViews user={this.state.user} {...this.props} />
-					</>
+						<ApplicationViews
+							className='mainContainer'
+							user={this.state.user}
+							{...this.props}
+						/>
+					</section>
 				) : (
-					<>
+					<section className='landingPage'>
 						<Login setUser={this.setUser} user={this.state.user} />
-						<Registration setUser={this.setUser} user={this.state.user} />
-					</>
+						{/* <Registration setUser={this.setUser} user={this.state.user} /> */}
+					</section>
 				)}
 			</React.Fragment>
 		);
