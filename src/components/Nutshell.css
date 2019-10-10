@@ -68,6 +68,20 @@
 	align-self: flex-end;
 }
 
+.cardButtonRow {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+
+.myCard {
+	background-color: lightblue;
+}
+
+.friendCard {
+	background-color: lightcoral;
+}
+
 .anticon {
 	vertical-align: 0.1em !important;
 }

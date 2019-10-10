@@ -19,7 +19,7 @@ export default {
 				});
 
 				return fetch(
-					`http://localhost:8088/articles/?userId=${currentUserId}${searchString}&_sort=date&_order=asc`
+					`http://localhost:8088/articles/?userId=${currentUserId}${searchString}&_sort=date&_order=desc`
 				).then(response => response.json());
 			});
 	},
@@ -45,5 +45,9 @@ export default {
 			},
 			body: JSON.stringify(editedArticle)
 		}).then(data => data.json());
-	}
+	},
+	get(id) {
+        return fetch(`${remoteURL}/articles/${id}`)
+            .then(result => result.json())
+    },
 };
