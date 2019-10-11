@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Nutshell from './Nutshell'
+import { getDefaultWatermarks } from 'istanbul-lib-report';
 
 class Auth extends Component {
     state = {
         user: sessionStorage.getItem('activeUser') !== null,
-        activeUser: ""
+        activeUser: this.getUser()
     }
     // Check if credentials are in session storage
     //returns true/false
@@ -12,11 +13,18 @@ class Auth extends Component {
 
     setUser = (id) => {
         sessionStorage.setItem('activeUser', id);
-        this.setState({activeUser: this.getUser()})
+        this.setState(
+            {activeUser: this.getUser(),
+            user: true})
     };
 
-    getUser = ()=> {
-        return parseInt(sessionStorage.getItem('activeUser'))
+    getUser() {
+        if(sessionStorage.getItem('activeUser')){
+            return parseInt(sessionStorage.getItem('activeUser'));
+        } else {
+            return ""
+        }
+        // this.setState({activeUser: parseInt(sessionStorage.getItem('activeUser'))})
     }
     //
     clearUser = () => {
@@ -31,6 +39,7 @@ class Auth extends Component {
                 <Nutshell
                 isAuthenticated={this.isAuthenticated}
                 clearUser={this.clearUser}
+                getUser={this.getUser}
                 setUser={this.setUser}
                 user={this.state.user}
                 {...this.props}

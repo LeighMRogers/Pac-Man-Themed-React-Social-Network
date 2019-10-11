@@ -4,7 +4,8 @@ import ArticleManager from '../../modules/ArticleManager';
 import EditArticleForm from "./EditArticleForm"
 class ArticleCard extends Component {
 	state = {
-		myCard: true
+		myCard: true,
+		articles: ""
 	}
 
 
@@ -14,7 +15,15 @@ class ArticleCard extends Component {
 		});
 	};
 
+	// getData = () => {
 
+	// 	ArticleManager.getArticles(this.props.activeUser).then(articles => {
+	// 		console.log('articles array', articles);
+	// 		this.setState({
+	// 			articles: this.props.articles
+	// 		});
+	// 	});
+	// };
 
 	componentDidMount() {
 

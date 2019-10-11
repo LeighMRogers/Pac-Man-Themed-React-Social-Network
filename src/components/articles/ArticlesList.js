@@ -10,20 +10,26 @@ class ArticleList extends Component {
 	};
 
 	componentDidMount() {
-		console.log("inside",this.props.activeUser)
-		//getAll from AnimalManager and hang on to that data; put it in state
-		ArticleManager.getArticles(this.props.activeUser).then(articles => {
-			console.log('articles array', articles);
-			this.setState({
-				articles: articles
-			});
-		});
+		console.log("inside componentDidMount", this.props.activeUser)
+		// getAll from AnimalManager and hang on to that data; put it in state
+		// ArticleManager.getArticles(this.props.activeUser).then(articles => {
+		// 	console.log('articles array', articles);
+		// 	this.setState({
+		// 		articles: articles
+		this.getData();
+		// this.props.getUser();
+		// this.ifThisEmpty();
+		// 	});
+		// });
 	}
-
+	// ifThisEmpty = () => {
+	// 	if (this.state.articles.length < 1 || this.state.articles === undefined) {
+	// 		this.getData()
+	// 	}
+	// }
 	getData = () => {
-
 		ArticleManager.getArticles(this.props.activeUser).then(articles => {
-			console.log('articles array', articles);
+			console.log('articles array from getData', articles);
 			this.setState({
 				articles: articles
 			});
@@ -31,6 +37,7 @@ class ArticleList extends Component {
 	};
 
 	render() {
+		console.log("THESE ARE YOUR RENDERED ART TICKLES from Article List Render", this.state.articles)
 		return (
 			<div className='mainContainer'>
 				<h1>NEWS</h1>
