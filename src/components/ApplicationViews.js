@@ -27,7 +27,10 @@ export default class ApplicationViews extends Component {
 					path='/news'
 					render={props => {
 
-						return <ArticlesList {...props} activeUser={this.props.activeUser} />;
+						return <ArticlesList
+								{...props}
+								// getUser={this.props.getUser}
+								activeUser={this.props.activeUser} />;
 					}}
 				/>
 				{/* end news */}

@@ -14,7 +14,15 @@ class ArticleCard extends Component {
 		});
 	};
 
+	// getData = () => {
 
+	// 	ArticleManager.getArticles(this.props.activeUser).then(articles => {
+	// 		console.log('articles array', articles);
+	// 		this.setState({
+	// 			articles: this.props.articles
+	// 		});
+	// 	});
+	// };
 
 	componentDidMount() {
 
