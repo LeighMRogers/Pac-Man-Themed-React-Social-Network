@@ -4,7 +4,7 @@ import ArticleManager from '../../modules/ArticleManager';
 import EditArticleForm from "./EditArticleForm"
 class ArticleCard extends Component {
 	state = {
-		myCard: true
+		myCard: ""
 	}
 
 
@@ -37,7 +37,7 @@ class ArticleCard extends Component {
 		return (
 
 			<>
-				{ this.state.myCard && (
+				{ this.state.myCard ? (
 						<div className="myCard">
 
 							<h3>
@@ -60,8 +60,8 @@ class ArticleCard extends Component {
 				    </Button>
 							</div>
 						</div>
-					)}
-				{!this.state.myCard && (
+					):(
+
 					<div className="friendCard">
 
 						<h3>

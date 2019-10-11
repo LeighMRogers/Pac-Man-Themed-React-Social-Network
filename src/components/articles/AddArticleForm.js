@@ -1,5 +1,5 @@
 import React from 'react';
-import { Drawer, Button } from 'antd';
+import { Drawer, Button, Form, Icon, Input, } from 'antd';
 import ArticleManager from "../../modules/ArticleManager"
 
 class AddArticleForm extends React.Component {
@@ -78,30 +78,41 @@ class AddArticleForm extends React.Component {
 				</Button>
 				<Drawer
 					width='350'
-					title='Basic Bitch Drawer'
+					title='Add a News Article'
 					placement='right'
 					closable={false}
 					onClose={this.onClose}
 					visible={this.state.visible}
 				>
-					<form>
-						<fieldset>
-							<div className="formgrid">
-								<input type="date" required onChange={this.handleFieldChange} id="date" placeholder="Date" />
-								<label htmlFor="date">Date</label>
-								<input type="text" required onChange={this.handleFieldChange} id="title" placeholder="Title" />
-								<label htmlFor="title">Title</label>
-								<input type="text" required onChange={this.handleFieldChange} id="summary" placeholder="Summary" />
-								<label htmlFor="title">Summary</label>
-								<input type="text" required onChange={this.handleFieldChange} id="url" placeholder="URL" />
-								<label htmlFor="title">URL</label>
-							</div>
-							<div className="alignRight">
-								<button type="button" disabled={this.state.loadingStatus} onClick={this.handleClick}>Submit
-                            </button>
-							</div>
-						</fieldset>
-					</form>
+					<Form>
+
+						<div className="formField">
+							<Input type="date" required onChange={this.handleFieldChange} id="date" placeholder="Date" prefix={
+								<Icon type='calendar' style={{ color: 'rgba(0,0,0,.25)' }} />
+							} />
+						</div>
+						<div className="formField">
+							<Input type="text" required onChange={this.handleFieldChange} id="title" placeholder="Title" prefix={
+								<Icon type='pic-left' style={{ color: 'rgba(0,0,0,.25)' }} />
+							} />
+						</div>
+						<div className="formField">
+							<Input type="text" required onChange={this.handleFieldChange} id="summary" placeholder="Summary" prefix={
+								<Icon type='align-left' style={{ color: 'rgba(0,0,0,.25)' }} />
+							} />
+						</div>
+						<div className="formField">
+							<Input type="text" required onChange={this.handleFieldChange} id="url" placeholder="URL" prefix={
+								<Icon type='chrome' style={{ color: 'rgba(0,0,0,.25)' }} />
+							} />
+
+						</div>
+						<div className="formField">
+							<Button className="login-form-button" type="primary" disabled={this.state.loadingStatus} onClick={this.handleClick} icon="add">Submit
+								</Button>
+						</div>
+
+					</Form>
 				</Drawer>
 			</div>
 		);
@@ -109,3 +120,6 @@ class AddArticleForm extends React.Component {
 }
 
 export default AddArticleForm;
+
+
+
