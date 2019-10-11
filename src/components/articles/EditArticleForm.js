@@ -67,7 +67,7 @@ class EditArticleForm extends React.Component {
         evt.preventDefault();
         this.updateExistingArticle()
         this.onClose()
-
+        this.setState({ loadingStatus: false });
     }
 
 
