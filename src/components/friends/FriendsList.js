@@ -42,6 +42,7 @@ class FriendsList extends Component {
                         console.log("new Friend object:", newFriends)
                         this.setState({
                             friends: newFriends
+                            //call a set state function for all modules
                         })
                     })
             })
