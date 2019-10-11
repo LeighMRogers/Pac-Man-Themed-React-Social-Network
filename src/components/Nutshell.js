@@ -20,7 +20,7 @@ class Nutshell extends Component {
 		console.log("nutshell props:", this.props)
 		return (
 			<React.Fragment>
-				{this.props.isAuthenticated() ? (
+				{this.props.user ? (
 					<section className='wrapper'>
 						<NavBar
 							className='navBar'
@@ -33,6 +33,7 @@ class Nutshell extends Component {
 							currentUserId={this.props.activeUser}
 							className='mainContainer'
 							// user={props.user}
+							// getUser={this.props.getUser}
 							{...this.props}
 						/>
 					</section>
