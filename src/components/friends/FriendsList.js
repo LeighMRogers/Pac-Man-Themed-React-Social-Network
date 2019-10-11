@@ -11,6 +11,7 @@ import React, { Component } from 'react'
 //import the components we will need
 import FriendCard from './FriendCard'
 import FriendsManager from '../../modules/FriendsManager'
+import FriendsSearch from './FriendsSearch'
 class FriendsList extends Component {
     //define what this component needs to render
     state = {
@@ -19,40 +20,61 @@ class FriendsList extends Component {
 
     deleteFriend = id => {
         FriendsManager.delete(id)
-        .then(() => {
-          FriendsManager.getFriends(this.props.currentUserId)
-          .then((newFriends) => {
-            this.setState({
-                friends: newFriends
+            .then(() => {
+                FriendsManager.getFriends(this.props.currentUserId)
+                    .then((newFriends) => {
+                        this.setState({
+                            friends: newFriends
+                        })
+                    })
             })
-          })
-        })
     }
 
-    componentDidMount(){
+    addFriend = id => {
+        const newFriend = {
+            userId: id,
+            friendInitiate: this.props.currentUserId
+        }
+        FriendsManager.post(newFriend)
+            .then(() => {
+                FriendsManager.getFriends(this.props.currentUserId)
+                    .then((newFriends) => {
+                        console.log("new Friend object:", newFriends)
+                        this.setState({
+                            friends: newFriends
+                            //call a set state function for all modules
+                        })
+                    })
+            })
+    }
+
+    componentDidMount() {
         console.log("Friends LIST: ComponentDidMount");
         //getAll from FriendsManager and hang on to that data; put it in state
         FriendsManager.getFriends(this.props.currentUserId)
-        .then((friends) => {
-            this.setState({
-                friends: friends
+            .then((friends) => {
+                this.setState({
+                    friends: friends
+                })
             })
-        })
     }
 
     render() {
         console.log("Friend Search: Render");
-        return(
+        return (
             <>
-            <h4>Friends</h4>
-            {/* //add this button above your display of friend cards */}
-            <div className="container-cards">
-                {this.state.friends.map(friend =>
-                    <FriendCard key={friend.id}
-                                friend={friend}
-                                deleteFriend={this.deleteFriend}
-                                {...this.props} />)}
-            </div>
+                <FriendsSearch
+                            {...this.props}
+                            addFriend={this.addFriend}/>
+
+                <div className="container-cards">
+                <h4>Your Friends</h4>
+                    {this.state.friends.map(friend =>
+                        <FriendCard key={friend.id}
+                            friend={friend}
+                            deleteFriend={this.deleteFriend}
+                            {...this.props} />)}
+                </div>
             </>
         )
     }

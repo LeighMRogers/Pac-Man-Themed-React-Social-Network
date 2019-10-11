@@ -20,5 +20,8 @@ export default {
             },
             body: JSON.stringify(newFriend)
         }).then(data => data.json())
-      }
+      },
+      findFriend(userName) {
+        return fetch(`${remoteURL}/users?userName_like=${userName}`).then(result => result.json())
+    }
 };
