@@ -65,9 +65,8 @@ class EditEventForm extends React.Component {
         evt.preventDefault();
         this.updateExistingEvent()
         this.onClose()
-
-    }
-
+        this.setState({ loadingStatus: false });
+    };
 
     render() {
         return (
