@@ -19,7 +19,7 @@ export default {
 				});
 
 				return fetch(
-					`http://localhost:8088/articles/?userId=${currentUserId}${searchString}&_sort=date&_order=desc`
+					`http://localhost:8088/articles/?userId=${currentUserId}${searchString}&_expand=user&_sort=date&_order=desc`
 				).then(response => response.json());
 			});
 	},

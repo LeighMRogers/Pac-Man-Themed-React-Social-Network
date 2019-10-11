@@ -88,7 +88,7 @@
 
 .addBtnContainer {
 	display: flex;
-	align-self: flex-end;
+	align-self: center;
 }
 
 nav {
