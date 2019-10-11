@@ -39,7 +39,8 @@ export default class ApplicationViews extends Component {
 					path='/events'
 					render={props => {
 
-						return <EventsList {...props} />;
+            return <EventsList {...props}
+            activeUser={this.props.activeUser} />;
 					}}
 				/>
 

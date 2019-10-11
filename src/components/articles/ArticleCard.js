@@ -54,6 +54,7 @@ class ArticleCard extends Component {
 						<p>Summary: {this.props.article.summary}</p>
 						<p>Url: {this.props.article.url}</p>
 						<p>date: {this.props.article.date}</p>
+<<<<<<< HEAD
 						<div className='cardButtonRow'>
 							<EditArticleForm {...this.props.article} getData={this.props.getData} />
 							<Button
@@ -67,6 +68,8 @@ class ArticleCard extends Component {
 								Delete
 				            </Button>
 						</div>
+=======
+>>>>>>> master
 					</div>
 				) : (
 
