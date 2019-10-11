@@ -33,7 +33,7 @@ class EventsList extends Component {
 	render() {
 		return (
 			<div className='mainContainer'>
-				<h1>NEWS</h1>
+				<h1>EVENTS</h1>
 				<AddEventForm getData={this.getData} />
 				{this.state.events.map(event => (
 					<EventCard

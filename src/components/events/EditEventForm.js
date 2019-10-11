@@ -109,16 +109,10 @@ class EditEventForm extends React.Component {
 								} />
                                 </div>
                                 <div className="formField">
-                                <Input type="text" required onChange={this.handleFieldChange} id="summary" placeholder="Summary" value={this.state.summary} prefix={
+                                <Input type="text" required onChange={this.handleFieldChange} id="location" placeholder="Location" value={this.state.location} prefix={
 									<Icon type='align-left' style={{ color: 'rgba(0,0,0,.25)' }} />
 								}/>
                                 </div>
-                                <div className="formField">
-                                <Input type="text" required onChange={this.handleFieldChange} id="url" placeholder="URL" value={this.state.url} prefix={
-									<Icon type='chrome' style={{ color: 'rgba(0,0,0,.25)' }} />
-								}/>
-                                </div>
-
 
                                 <div className="formField">
                                 <Button className="login-form-button" type="primary" disabled={this.state.loadingStatus} onClick={this.handleClick} icon="edit">Edit

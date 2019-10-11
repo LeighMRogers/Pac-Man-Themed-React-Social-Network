@@ -63,25 +63,9 @@ class EventCard extends Component {
 
 					<div className="friendCard">
 
-						<h3>
-							<span>{this.props.event.title}</span>
-						</h3>
-						<p>Summary: {this.props.event.summary}</p>
-						<p>Url: {this.props.event.url}</p>
-						<p>date: {this.props.event.date}</p>
-						<div className='cardButtonRow'>
-							<EditEventForm {...this.props.event} getData={this.props.getData} />
-							<Button
-								className='addItemBtn'
-								type='primary'
-								shape='round'
-								icon='delete'
-								size='small'
-								onClick={() => this.handleDelete(this.props.event.id)}
-							>
-								Delete
-				    </Button>
-						</div>
+						<h3><span>{this.props.event.title}</span></h3>
+						<p>Date: {this.props.event.date}</p>
+                        <p>Location: {this.props.event.location}</p>
 					</div>
 
 				)}

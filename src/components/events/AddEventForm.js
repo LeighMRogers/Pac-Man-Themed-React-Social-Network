@@ -8,8 +8,7 @@ class AddEventForm extends React.Component {
 		userId: "",
 		date: "",
 		title: "",
-		summary: "",
-		url: "",
+		location: "",
 		loadingStatus: false
 	};
 
@@ -40,8 +39,7 @@ class AddEventForm extends React.Component {
 			const event = {
 				date: this.state.date,
 				title: this.state.title,
-				summary: this.state.summary,
-				url: this.state.url,
+				location: this.state.location,
 				userId: userId
 			};
 			EventsManager.post(event)
@@ -56,8 +54,7 @@ class AddEventForm extends React.Component {
 		this.onClose()
 		document.querySelector("#title").value = ""
 		document.querySelector("#date").value = ""
-		document.querySelector("#summary").value = ""
-		document.querySelector("#url").value = ""
+		document.querySelector("#location").value = ""
 
 	}
 
@@ -97,16 +94,11 @@ class AddEventForm extends React.Component {
 							} />
 						</div>
 						<div className="formField">
-							<Input type="text" required onChange={this.handleFieldChange} id="summary" placeholder="Summary" prefix={
+							<Input type="text" required onChange={this.handleFieldChange} id="location" placeholder="Location" prefix={
 								<Icon type='align-left' style={{ color: 'rgba(0,0,0,.25)' }} />
 							} />
 						</div>
-						<div className="formField">
-							<Input type="text" required onChange={this.handleFieldChange} id="url" placeholder="URL" prefix={
-								<Icon type='chrome' style={{ color: 'rgba(0,0,0,.25)' }} />
-							} />
 
-						</div>
 						<div className="formField">
 							<Button className="login-form-button" type="primary" disabled={this.state.loadingStatus} onClick={this.handleClick} icon="add">Submit
 								</Button>
