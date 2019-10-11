@@ -1,20 +1,44 @@
 import React, { Component } from 'react'
+import FriendsManager from '../../modules/FriendsManager';
+import FriendSearchCard from './FriendSearchCard'
 
 class FriendsSearch extends Component {
     //define what this component needs to render
     state = {
-        articles: [],
+        searchQuery: "",
+        searchResults: []
     }
+
+    handleSearch(searchString) {
+        if (searchString.length > 2) {
+            FriendsManager.findFriend(searchString).then(response => {
+                this.setState({ searchResults: response })
+            })
+        } else {
+            this.setState({ searchResults: [] })
+        }
+    }
+    handleFieldChange = evt => {
+        const stateToChange = {};
+        stateToChange[evt.target.id] = evt.target.value;
+        this.setState(stateToChange, () => this.handleSearch(this.state.searchQuery));
+    };
+
     render() {
         console.log("Friend Search: Render");
         return (
             <section className="section-content">
+                <h5>Find a Friend:</h5>
                 <button type="button"
                     className="btn"
-                    // refactor for handleSearch
-                    onClick={() => {this.props.history.push("/friends/new")}}>
-                    Search for Friends
+                    onChange={() => { this.handleSearch() }}>Search
                 </button>
+                {/* this is the input field */}
+                <input id="searchQuery" onChange={this.handleFieldChange} placeholder='Search by User Name'></input>
+                {this.state.searchResults.map(friend =>
+                    <FriendSearchCard
+                        key={friend.id}
+                        friend={friend} />)}
             </section>
         )
     }
