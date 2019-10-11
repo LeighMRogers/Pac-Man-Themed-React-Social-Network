@@ -60,16 +60,6 @@ class AddMessageForm extends React.Component {
 	render() {
 		return (
 			<div className='addBtnContainer'>
-                <Button
-					className='addItemBtn'
-					type='primary'
-					shape='round'
-					icon='plus'
-					// size='large'
-					onClick={this.showDrawer}
-				>
-					Add New
-				</Button>
 				<Form>
                     <div className="formField">
                         <Input type="date" required onChange={this.handleFieldChange} id="date" placeholder="Date" prefix={
@@ -87,6 +77,16 @@ class AddMessageForm extends React.Component {
                         </Button>
                     </div>
                 </Form>
+                <Button
+					className='addItemBtn'
+					type='primary'
+					shape='round'
+					icon='plus'
+					// size='large'
+					onClick={this.showDrawer}
+				>
+					Add New
+				</Button>
 			</div>
 		);
 	}

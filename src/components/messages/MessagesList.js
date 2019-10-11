@@ -34,7 +34,6 @@ class MessagesList extends Component {
 		return (
 			<div className='mainContainer'>
 				<h1>MESSAGES</h1>
-				<AddMessageForm getData={this.getData} />
 				{this.state.messages.map(message => (
 					<MessageCard
 						key={message.id}
@@ -43,6 +42,7 @@ class MessagesList extends Component {
 						getData={this.getData}
 					/>
 				))}
+                <AddMessageForm getData={this.getData} />
 			</div>
 		);
 	}

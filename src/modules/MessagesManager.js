@@ -19,7 +19,7 @@ export default {
 				});
 
 				return fetch(
-					`http://localhost:8088/messages/?&_sort=date&_order=desc&_expand=user`
+					`http://localhost:8088/messages/?&_sort=date&_order=asc&_expand=user`
 				).then(response => response.json());
 			});
 	},
