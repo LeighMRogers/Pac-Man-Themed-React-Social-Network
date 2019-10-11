@@ -49,7 +49,8 @@ export default class ApplicationViews extends Component {
 					path='/messages'
 					render={props => {
 
-						return <MessagesList {...props} />;
+						return <MessagesList {...props}
+						activeUser={this.props.activeUser} />;
 
 					}}
 				/>

@@ -43,6 +43,9 @@ class EventCard extends Component {
 							<h3>
 								<span>{this.props.event.title}</span>
 							</h3>
+							<h6>
+							<span>{this.props.event.user.userName}</span>
+							</h6>
 							<p>Date: {this.props.event.date}</p>
                             <p>Location: {this.props.event.location}</p>
 							<div className='cardButtonRow'>
@@ -62,9 +65,10 @@ class EventCard extends Component {
 					):(
 
 					<div className="friendCard">
-
 						<h3><span>{this.props.event.title}</span></h3>
-						<p>{this.props.event.user.name}</p>
+						<h6>
+							<span>{this.props.event.user.userName}</span>
+						</h6>
 						<p>Date: {this.props.event.date}</p>
                         <p>Location: {this.props.event.location}</p>
 					</div>
