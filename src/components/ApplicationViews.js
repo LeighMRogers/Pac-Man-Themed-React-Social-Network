@@ -12,7 +12,7 @@ export default class ApplicationViews extends Component {
 	render() {
 		return (
 			<React.Fragment>
-				 {/* <Route
+				{/* <Route
 					exact
 					path='/'
 					render={props => {
@@ -28,9 +28,9 @@ export default class ApplicationViews extends Component {
 					render={props => {
 
 						return <ArticlesList
-								{...props}
-								// getUser={this.props.getUser}
-								activeUser={this.props.activeUser} />;
+							{...props}
+							// getUser={this.props.getUser}
+							activeUser={this.props.activeUser} />;
 					}}
 				/>
 				{/* end news */}
@@ -39,8 +39,8 @@ export default class ApplicationViews extends Component {
 					path='/events'
 					render={props => {
 
-            return <EventsList {...props}
-            activeUser={this.props.activeUser} />;
+						return <EventsList {...props}
+							activeUser={this.props.activeUser} />;
 					}}
 				/>
 
@@ -58,7 +58,8 @@ export default class ApplicationViews extends Component {
 					path='/tasks'
 					render={props => {
 
-						return <TasksList {...props} activeUser={this.props.activeUser} />;
+						return <TasksList {...props}
+							activeUser={this.props.activeUser} />;
 					}}
 				/>
 			</React.Fragment>

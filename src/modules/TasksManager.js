@@ -17,7 +17,7 @@ export default {
 				});
 
 				return fetch(
-					`${remoteURL}/tasks/?userId=${currentUserId}${searchString}&_sort=date&_order=desc&completed=no`
+					`${remoteURL}/tasks/?userId=${currentUserId}${searchString}&_expand=user&_sort=date&_order=desc&completed=no`
 				).then(response => response.json());
 			});
     },
@@ -36,7 +36,7 @@ export default {
 				});
 
 				return fetch(
-					`${remoteURL}/tasks/?userId=${currentUserId}${searchString}&_sort=date&_order=desc&completed=yes`
+					`${remoteURL}/tasks/?userId=${currentUserId}${searchString}&_expand=user&_sort=date&_order=desc&completed=yes`
 				).then(response => response.json());
 			});
 	},

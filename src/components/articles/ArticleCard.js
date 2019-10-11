@@ -46,31 +46,30 @@ class ArticleCard extends Component {
 
 			<>
 				{this.state.myCard ? (
-					<div className="myCard">
+					<>
+						<div className="myCard">
 
-						<h3>
-							<span>{this.props.article.title}</span>
-						</h3>
-						<p>Summary: {this.props.article.summary}</p>
-						<p>Url: {this.props.article.url}</p>
-						<p>date: {this.props.article.date}</p>
-<<<<<<< HEAD
-						<div className='cardButtonRow'>
-							<EditArticleForm {...this.props.article} getData={this.props.getData} />
-							<Button
-								className='addItemBtn'
-								type='primary'
-								shape='round'
-								icon='delete'
-								size='small'
-								onClick={() => this.handleDelete(this.props.article.id)}
-							>
-								Delete
-				            </Button>
+							<h3>
+								<span>{this.props.article.title}</span>
+							</h3>
+							<p>Summary: {this.props.article.summary}</p>
+							<p>Url: {this.props.article.url}</p>
+							<p>date: {this.props.article.date}</p>
+							<div className='cardButtonRow'>
+								<EditArticleForm {...this.props.article} getData={this.props.getData} />
+								<Button
+									className='addItemBtn'
+									type='primary'
+									shape='round'
+									icon='delete'
+									size='small'
+									onClick={() => this.handleDelete(this.props.article.id)}
+								>
+									Delete
+					    </Button>
+							</div>
 						</div>
-=======
->>>>>>> master
-					</div>
+					</>
 				) : (
 
 						<div className="friendCard">
@@ -78,6 +77,7 @@ class ArticleCard extends Component {
 							<h3>
 								<span>{this.props.article.title}</span>
 							</h3>
+							<p>{this.props.article.user.name}</p>
 							<p>Summary: {this.props.article.summary}</p>
 							<p>Url: {this.props.article.url}</p>
 							<p>date: {this.props.article.date}</p>

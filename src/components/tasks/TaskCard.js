@@ -4,7 +4,7 @@ import TaskManager from '../../modules/TasksManager';
 import EditTaskForm from "./EditTaskForm"
 class TaskCard extends Component {
     state = {
-        myCard: ""
+        myCard: "",
     }
 
 
@@ -14,10 +14,19 @@ class TaskCard extends Component {
         });
     };
 
+    completedTask = () => {
+        const completedTask = {
+            completed: "yes",
+            id: this.props.task.id
+        }
+
+        TaskManager.update(completedTask).then(this.props.getData)
+    }
+
 
 
     componentDidMount() {
-
+        console.log("card props", this.props)
         if (parseInt(sessionStorage.getItem("activeUser")) === this.props.task.userId) {
             this.setState({
                 myCard: true
@@ -26,13 +35,12 @@ class TaskCard extends Component {
         } else {
             this.setState({
                 myCard: false
-            }, () => console.log("my card state", this.state))
-        }
+            })
+        };
     }
 
 
     render() {
-
 
         return (
 
@@ -45,7 +53,18 @@ class TaskCard extends Component {
                         </h3>
                         <p>Due date: {this.props.task.dueDate}</p>
                         <p>completed: {this.props.task.completed}</p>
-                        Have you completed it? <Checkbox />
+
+                        {this.props.task.completed === "no" ? (
+                            <>
+                                <p>Have you completed it? </p>
+                                <Checkbox onChange={this.completedTask} />
+                            </>) : null}
+
+
+
+
+
+
                         <div className='cardButtonRow'>
                             <EditTaskForm {...this.props.task} getData={this.props.getData} />
                             <Button
@@ -60,6 +79,10 @@ class TaskCard extends Component {
 				            </Button>
                         </div>
                     </div>
+
+
+
+
                 ) : (
 
                         <div className="friendCard">
@@ -67,11 +90,14 @@ class TaskCard extends Component {
                             <h3>
                                 <span>{this.props.task.title}</span>
                             </h3>
+                            <p>{this.props.task.user.name}</p>
                             <p>date: {this.props.task.dueDate}</p>
                             <p>completed: {this.props.task.completed}</p>
                         </div>
 
                     )}
+
+
             </>
         );
 

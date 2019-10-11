@@ -31,7 +31,6 @@ class AddTaskForm extends React.Component {
 
 
 	addNewTask = () => {
-		// evt.preventDefault();
 		if (this.state.title === "" || this.state.dueDate === "" || this.state.completed === "") {
 			window.alert("Please fill out all the fields");
 		} else {
@@ -55,9 +54,7 @@ class AddTaskForm extends React.Component {
 		document.querySelector("#title").value = ""
 		document.querySelector("#dueDate").value = ""
 
-	}
-
-
+    }
 
 	render() {
 		return (
@@ -67,7 +64,6 @@ class AddTaskForm extends React.Component {
 					type='primary'
 					shape='round'
 					icon='plus'
-					// size='large'
 					onClick={this.showDrawer}
 				>
 					Add New

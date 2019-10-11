@@ -64,6 +64,7 @@ class EventCard extends Component {
 					<div className="friendCard">
 
 						<h3><span>{this.props.event.title}</span></h3>
+						<p>{this.props.event.user.name}</p>
 						<p>Date: {this.props.event.date}</p>
                         <p>Location: {this.props.event.location}</p>
 					</div>
