@@ -37,6 +37,7 @@ class FriendsSearch extends Component {
                 <input id="searchQuery" onChange={this.handleFieldChange} placeholder='Search by User Name'></input>
                 {this.state.searchResults.map(friend =>
                     <FriendSearchCard
+                    addFriend={this.props.addFriend}
                         key={friend.id}
                         friend={friend} />)}
             </section>

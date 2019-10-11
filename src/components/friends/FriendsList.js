@@ -31,10 +31,15 @@ class FriendsList extends Component {
     }
 
     addFriend = id => {
-        FriendsManager.post(id)
+        const newFriend = {
+            userId: id,
+            friendInitiate: this.props.currentUserId
+        }
+        FriendsManager.post(newFriend)
             .then(() => {
                 FriendsManager.getFriends(this.props.currentUserId)
                     .then((newFriends) => {
+                        console.log("new Friend object:", newFriends)
                         this.setState({
                             friends: newFriends
                         })
@@ -58,7 +63,8 @@ class FriendsList extends Component {
         return (
             <>
                 <FriendsSearch
-                            {...this.props}/>
+                            {...this.props}
+                            addFriend={this.addFriend}/>
 
                 <div className="container-cards">
                 <h4>Your Friends</h4>
