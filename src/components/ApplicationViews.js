@@ -57,7 +57,7 @@ export default class ApplicationViews extends Component {
 					path='/tasks'
 					render={props => {
 
-						return <TasksList {...props} />;
+						return <TasksList {...props} activeUser={this.props.activeUser} />;
 					}}
 				/>
 			</React.Fragment>

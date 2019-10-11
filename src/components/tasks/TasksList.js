@@ -8,17 +8,17 @@ class TaskList extends Component {
 		tasks: []
 	};
 
-	componentDidMount() {
-		TasksManager.getCompletedTasks(this.props.activeUser).then(tasks => {
-			this.setState({
-				tasks: tasks
-			});
-		});
-	}
+	// componentDidMount() {
+	// 	TasksManager.getTasks(this.props.activeUser).then(tasks => {
+	// 		this.setState({
+	// 			tasks: tasks
+	// 		});
+	// 	});
+	// }
 
 	getData = () => {
 
-		TasksManager.getTasks(this.props.activeUser).then(tasks => {
+		TasksManager.getTasks5(this.props.activeUser).then(tasks => {
 			this.setState({
 				tasks: tasks
 			});

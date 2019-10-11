@@ -78,19 +78,6 @@ class ArticleCard extends Component {
 							<p>Summary: {this.props.article.summary}</p>
 							<p>Url: {this.props.article.url}</p>
 							<p>date: {this.props.article.date}</p>
-							<div className='cardButtonRow'>
-								<EditArticleForm {...this.props.article} getData={this.props.getData} />
-								<Button
-									className='addItemBtn'
-									type='primary'
-									shape='round'
-									icon='delete'
-									size='small'
-									onClick={() => this.handleDelete(this.props.article.id)}
-								>
-									Delete
-				                </Button>
-							</div>
 						</div>
 
 					)}

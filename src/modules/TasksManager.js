@@ -3,7 +3,6 @@ const remoteURL = 'http://localhost:8088';
 
 export default {
 	getTasks(currentUserId) {
-		// let currentUserId = parseInt(sessionStorage.getItem('activeUser'));
 		let currentUserFriends = [];
 		return FriendsManager.getFriends(currentUserId)
 			.then(data => {
@@ -23,7 +22,6 @@ export default {
 			});
     },
     getCompletedTasks(currentUserId) {
-		// let currentUserId = parseInt(sessionStorage.getItem('activeUser'));
 		let currentUserFriends = [];
 		return FriendsManager.getFriends(currentUserId)
 			.then(data => {
@@ -58,7 +56,7 @@ export default {
 	},
 	update(editTask) {
 		return fetch(`${remoteURL}/tasks/${editTask.id}`, {
-			method: 'PUT',
+			method: 'PATCH',
 			headers: {
 				'Content-Type': 'application/json'
 			},
