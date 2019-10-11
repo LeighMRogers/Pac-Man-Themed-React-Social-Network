@@ -31,8 +31,7 @@ class EditArticleForm extends React.Component {
     };
 
 
-    updateExistingArticle = evt => {
-        //evt.preventDefault()
+    updateExistingArticle = () => {
         this.setState({ loadingStatus: true });
         const editedArticle = {
             userId: this.state.userId,
@@ -67,7 +66,7 @@ class EditArticleForm extends React.Component {
         evt.preventDefault();
         this.updateExistingArticle()
         this.onClose()
-
+        this.setState({ loadingStatus: false });
     }
 
 
@@ -80,7 +79,6 @@ class EditArticleForm extends React.Component {
                     shape='round'
                     icon='edit'
                     size='small'
-                    // size='large'
                     onClick={this.showDrawer}
                 >
                     Edit

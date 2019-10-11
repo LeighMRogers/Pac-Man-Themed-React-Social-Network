@@ -45,7 +45,8 @@ class ArticleCard extends Component {
 		return (
 
 			<>
-				{ this.state.myCard ? (
+				{this.state.myCard ? (
+					<>
 						<div className="myCard">
 
 							<h3>
@@ -65,22 +66,24 @@ class ArticleCard extends Component {
 									onClick={() => this.handleDelete(this.props.article.id)}
 								>
 									Delete
-				    </Button>
+					    </Button>
 							</div>
 						</div>
-					):(
+					</>
+				) : (
 
-					<div className="friendCard">
+						<div className="friendCard">
 
-						<h3>
-							<span>{this.props.article.title}</span>
-						</h3>
-						<p>Summary: {this.props.article.summary}</p>
-						<p>Url: {this.props.article.url}</p>
-						<p>date: {this.props.article.date}</p>
-					</div>
+							<h3>
+								<span>{this.props.article.title}</span>
+							</h3>
+							<p>{this.props.article.user.name}</p>
+							<p>Summary: {this.props.article.summary}</p>
+							<p>Url: {this.props.article.url}</p>
+							<p>date: {this.props.article.date}</p>
+						</div>
 
-				)}
+					)}
 			</>
 		);
 

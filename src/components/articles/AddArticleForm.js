@@ -26,7 +26,11 @@ class AddArticleForm extends React.Component {
 	};
 	onClose = () => {
 		this.setState({
-			visible: false
+			visible: false,
+			date: "",
+			title: "",
+			summary: "",
+			url: "",
 		})
 	};
 
@@ -54,11 +58,6 @@ class AddArticleForm extends React.Component {
 		evt.preventDefault();
 		this.addNewArticle()
 		this.onClose()
-		document.querySelector("#title").value = ""
-		document.querySelector("#date").value = ""
-		document.querySelector("#summary").value = ""
-		document.querySelector("#url").value = ""
-
 	}
 
 
@@ -71,7 +70,6 @@ class AddArticleForm extends React.Component {
 					type='primary'
 					shape='round'
 					icon='plus'
-					// size='large'
 					onClick={this.showDrawer}
 				>
 					Add New
@@ -108,7 +106,8 @@ class AddArticleForm extends React.Component {
 
 						</div>
 						<div className="formField">
-							<Button className="login-form-button" type="primary" disabled={this.state.loadingStatus} onClick={this.handleClick} icon="add">Submit
+							<Button className="login-form-button" type="submit" color="primary" disabled={this.state.loadingStatus} onClick={this.handleClick}
+								 icon="add">Submit
 								</Button>
 						</div>
 
