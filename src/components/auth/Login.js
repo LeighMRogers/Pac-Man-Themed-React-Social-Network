@@ -3,6 +3,7 @@ import AuthManager from '../../modules/AuthManager';
 import Registration from '../auth/Registration';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import { Link, withRouter } from 'react-router-dom';
+import { Spring } from 'react-spring/renderprops';
 
 class Login extends Component {
 	// Set initial state
@@ -56,57 +57,87 @@ class Login extends Component {
 			<>
 				{this.state.hideReg && (
 					<>
-					<p>Listen Buddy...you need to log in.</p>
-					<Form
-						onSubmit={this.handleLogin}
-						id='loginForm'
-						className='login-form'
-					>
-						<div className='formField'>
-							<Input
-								prefix={
-									<Icon type='user' style={{ color: 'rgba(0,0,0,.25)' }} />
-								}
-								placeholder='Username'
-								onChange={this.handleFieldChange}
-								type='userName'
-								id='userName'
-								required=''
-								autoFocus=''
-							/>
-						</div>
-						<div className='formField'>
-							<Input
-								prefix={
-									<Icon type='lock' style={{ color: 'rgba(0,0,0,.25)' }} />
-								}
-								type='password'
-								placeholder='Password'
-								onChange={this.handleFieldChange}
-								id='password'
-								required=''
-							/>
-						</div>
-						<div className='formField'>
-							<Checkbox>Remember me</Checkbox>
-							<Button
-								type='primary'
-								htmlType='submit'
-								className='login-form-button'
-							>
-								Log in
-							</Button>
-							Or{' '}
-							<span className='regLink' onClick={this.showLogin} href=''>
-								register now!
-							</span>
-						</div>
-					</Form>
+						<Spring
+							from={{ opacity: 0 }}
+							to={{ opacity: 1 }}
+							//config={{ duration: 500 }}
+						>
+							{props => (
+								<div style={props}>
+									<p>Listen Buddy...you need to log in.</p>
+									<Form
+										onSubmit={this.handleLogin}
+										id='loginForm'
+										className='login-form'
+									>
+										<div className='formField'>
+											<Input
+												prefix={
+													<Icon
+														type='user'
+														style={{ color: 'rgba(0,0,0,.25)' }}
+													/>
+												}
+												placeholder='Username'
+												onChange={this.handleFieldChange}
+												type='userName'
+												id='userName'
+												required=''
+												autoFocus=''
+											/>
+										</div>
+										<div className='formField'>
+											<Input
+												prefix={
+													<Icon
+														type='lock'
+														style={{ color: 'rgba(0,0,0,.25)' }}
+													/>
+												}
+												type='password'
+												placeholder='Password'
+												onChange={this.handleFieldChange}
+												id='password'
+												required=''
+											/>
+										</div>
+										<div className='formField'>
+											<Checkbox>Remember me</Checkbox>
+											<Button
+												type='primary'
+												htmlType='submit'
+												className='login-form-button'
+											>
+												Log in
+											</Button>
+											Or{' '}
+											<span
+												className='regLink'
+												onClick={this.showLogin}
+												href=''
+											>
+												register now!
+											</span>
+										</div>
+									</Form>
+								</div>
+							)}
+						</Spring>
 					</>
 				)}
 
 				{!this.state.hideReg && (
-					<Registration {...this.props} hideReg={this.hideReg} />
+					<Spring
+						from={{ opacity: 0 }}
+						to={{ opacity: 1 }}
+						//config={{ duration: 500 }}
+					>
+						{props => (
+							<div style={props}>
+								<Registration {...this.props} hideReg={this.hideReg} />
+							</div>
+						)}
+					</Spring>
 				)}
 			</>
 		);

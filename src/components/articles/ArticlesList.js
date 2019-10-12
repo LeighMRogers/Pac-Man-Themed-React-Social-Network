@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ArticleManager from '../../modules/ArticleManager';
 import ArticleCard from './ArticleCard';
 import AddArticleForm from '../articles/AddArticleForm';
+import { Spring } from 'react-spring/renderprops';
 
 class ArticleList extends Component {
 	//define what this component needs to render
@@ -10,7 +11,7 @@ class ArticleList extends Component {
 	};
 
 	componentDidMount() {
-		console.log("inside componentDidMount", this.props.activeUser)
+		console.log('inside componentDidMount', this.props.activeUser);
 		// getAll from AnimalManager and hang on to that data; put it in state
 		// ArticleManager.getArticles(this.props.activeUser).then(articles => {
 		// 	console.log('articles array', articles);
@@ -37,7 +38,10 @@ class ArticleList extends Component {
 	};
 
 	render() {
-		console.log("THESE ARE YOUR RENDERED ART TICKLES from Article List Render", this.state.articles)
+		console.log(
+			'THESE ARE YOUR RENDERED ART TICKLES from Article List Render',
+			this.state.articles
+		);
 		return (
 			<div className='mainContainer'>
 				<h1>NEWS</h1>
