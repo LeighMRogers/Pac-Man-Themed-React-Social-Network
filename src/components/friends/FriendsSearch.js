@@ -31,7 +31,7 @@ class FriendsSearch extends Component {
                 <h5>Find a Friend:</h5>
                 <button type="button"
                     className="btn"
-                    onChange={() => { this.handleSearch() }}>Search
+                    onChange={() => { this.handleSearch() }}>
                 </button>
                 {/* this is the input field */}
                 <input id="searchQuery" onChange={this.handleFieldChange} placeholder='Search by User Name'></input>
