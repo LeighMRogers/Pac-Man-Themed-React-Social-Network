@@ -3,6 +3,7 @@
 .ant-drawer-header,
 .ant-drawer-title,
 h1,
+h2,
 h5,
 h4,
 #root {
@@ -15,7 +16,7 @@ p {
 	font-family: 'Minecraftia-Regular', sans-serif;
 }
 
-h1 {
+h1, h2 {
 	font-family: 'PAC-FONT', sans-serif;
 	letter-spacing: 5px;
 }
