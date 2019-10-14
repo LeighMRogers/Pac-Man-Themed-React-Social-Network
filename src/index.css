@@ -17,3 +17,9 @@ code {
 	font-family: 'PAC-FONT';
 	src: local('PAC-FONT'), url(./fonts/PAC-FONT.TTF) format('truetype');
 }
+
+@font-face {
+	font-family: 'Minecraftia-Regular';
+	src: local('Minecraftia-Regular'),
+		url(./fonts/Minecraftia-Regular.ttf) format('truetype');
+}

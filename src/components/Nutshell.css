@@ -8,6 +8,11 @@ h4,
 #root {
 	background-color: #000000 !important;
 	color: #ffff00 !important;
+	/* font-family: 'Minecraftia-Regular', sans-serif; */
+}
+
+p {
+	font-family: 'Minecraftia-Regular', sans-serif;
 }
 
 h1 {
@@ -95,6 +100,10 @@ h1 {
 	align-self: flex-end;
 }
 
+.cardFriendImg {
+	align-self: center;
+}
+
 .msgHeader {
 	display: flex;
 	justify-content: space-between;
@@ -168,7 +177,7 @@ h1 {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	padding: 1em;
+	padding: 2em;
 }
 
 .friendSearchRow {
