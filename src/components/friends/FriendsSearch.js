@@ -30,7 +30,7 @@ class FriendsSearch extends Component {
 		return (
 			<section className='friendSearch'>
 				<h5>Find a Friend:</h5>
-				<button
+				{/* <button
 					type='button'
 					className='btn'
 					onChange={() => {
@@ -38,7 +38,7 @@ class FriendsSearch extends Component {
 					}}
 				>
 					Search
-				</button>
+				</button> */}
 				{/* this is the input field */}
 				<input
 					id='searchQuery'

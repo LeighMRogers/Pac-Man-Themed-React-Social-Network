@@ -29,7 +29,9 @@ class MessagesList extends Component {
 	render() {
 		return (
 			<div className='mainContainer'>
-				<h1>MESSAGES</h1>
+				<div className='sectionHeader'>
+					<h1>MESSAGES</h1>
+				</div>
 				{this.state.messages.map(message => (
 					<MessageCard
 						key={message.id}

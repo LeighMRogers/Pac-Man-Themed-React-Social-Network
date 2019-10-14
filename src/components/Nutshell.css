@@ -6,10 +6,19 @@ h1,
 h5,
 h4,
 #root {
-	background-color: #3a3939 !important;
-	color: white !important;
+	background-color: #000000 !important;
+	color: #ffff00 !important;
+	/* font-family: 'Minecraftia-Regular', sans-serif; */
 }
 
+p {
+	font-family: 'Minecraftia-Regular', sans-serif;
+}
+
+h1 {
+	font-family: 'PAC-FONT', sans-serif;
+	letter-spacing: 5px;
+}
 .ant-input:placeholder-shown {
 	color: black !important;
 }
@@ -79,10 +88,37 @@ h4,
 }
 
 .logoPlaceholder {
-	height: 200px;
-	width: 200px;
-	border: 1px red dotted;
+	height: 153px;
+	width: 145px;
+	background-image: url('/images/ghost1.png');
+	background-size: cover;
+	margin-bottom: 2em;
 }
+
+.cardImg {
+	float: right;
+	align-self: flex-end;
+}
+
+.cardFriendImg {
+	align-self: center;
+}
+
+.msgHeader {
+	display: flex;
+	justify-content: space-between;
+}
+
+.msgHeader h5 span {
+	color: white;
+}
+
+.msgBody {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 1em;
+}
+
 /* login styling */
 
 .login-form-button {
@@ -115,19 +151,53 @@ h4,
 }
 
 .myCard {
-	background-color: #d3cfcc;
+	background-color: #fca8d9;
 	margin: 1em;
 	padding: 1em;
 	border-radius: 5px;
 	color: black !important;
+	/* align-self: baseline; */
 }
 
 .friendCard {
-	background-color: #9b8894;
+	background-color: #000000;
+	display: flex;
+	flex-direction: column;
 	margin: 1em;
 	padding: 1em;
 	border-radius: 5px;
-	color: black !important;
+	color: rgb(255, 255, 255) !important;
+	border: 7px dotted yellow;
+	/* align-self: flex-end; */
+}
+
+.friendCardNav {
+	border: 7px dotted yellow;
+	width: 100%;
+	margin-bottom: 1em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 2em;
+}
+
+.friendSearchRow {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 1em;
+	width: 100%;
+}
+
+.friendCardNav h6 {
+	color: white;
+	text-align: center;
+}
+
+.friendCard h3 span,
+.friendCard h1 span,
+.friendCard h6 {
+	color: white !important;
 }
 
 .anticon {
@@ -156,10 +226,15 @@ nav {
 .ant-btn-primary,
 .ant-btn-sm,
 .navBtn,
+.btn,
 .login-form-button {
-	background-color: #572e4c !important;
-	border-color: #31192b !important;
+	background-color: #2121de !important;
+	border-color: #2121de !important;
 	color: white !important;
+}
+
+.ant-btn-sm {
+	float: right;
 }
 
 .sectionHeader {
@@ -171,11 +246,32 @@ nav {
 	margin-bottom: 0em;
 }
 
+.taskRow {
+	display: flex;
+	flex-wrap: wrap;
+
+	margin-left: 1em;
+	margin-bottom: 0em;
+}
+
 .friendSearch {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	color: white !important;
 	margin-top: 2em;
+	margin-bottom: 2em;
+	width: 100%;
+}
+
+.container-cards {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+
+.msgSubmitRow {
+	display: flex;
 	margin-bottom: 2em;
 }

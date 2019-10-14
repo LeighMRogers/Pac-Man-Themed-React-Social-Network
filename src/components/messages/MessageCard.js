@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { Button } from 'antd';
 import MessagesManager from '../../modules/MessagesManager';
-import EditMessageForm from "./EditMessageForm"
-import moment from "moment";
+import EditMessageForm from './EditMessageForm';
+import moment from 'moment';
 class MessageCard extends Component {
 	state = {
-		myCard: ""
-	}
-
+		myCard: ''
+	};
 
 	handleDelete = id => {
 		MessagesManager.delete(id).then(() => {
@@ -15,43 +14,48 @@ class MessageCard extends Component {
 		});
 	};
 
-
-
 	componentDidMount() {
-
-		if (parseInt(sessionStorage.getItem("activeUser")) === this.props.message.userId) {
+		if (
+			parseInt(sessionStorage.getItem('activeUser')) ===
+			this.props.message.userId
+		) {
 			this.setState({
 				myCard: true
-			})
-
+			});
 		} else {
-			this.setState({
-				myCard: false
-			}, () => console.log("my card state", this.state))
+			this.setState(
+				{
+					myCard: false
+				},
+				() => console.log('my card state', this.state)
+			);
 		}
 	}
 
-
 	render() {
-		let timeStamp = moment(this.props.message.date).fromNow()
+		let timeStamp = moment(this.props.message.date).fromNow();
 
 		return (
-
 			<>
 				{this.state.myCard ? (
-					<div className="myCard">
-
+					<div className='myCard'>
 						<h6>
 							<span>{this.props.message.user.userName}</span>
 						</h6>
 						<p>Posted: {timeStamp} </p>
 						<p>Message: {this.props.message.message}</p>
-						{
-							this.props.message.editTimeStamp !== "" ?
-							<p>Last Edited {moment(this.props.message.editTimeStamp).fromNow()}</p> : ""
-						}
+						{this.props.message.editTimeStamp !== '' ? (
+							<p>
+								Last Edited {moment(this.props.message.editTimeStamp).fromNow()}
+							</p>
+						) : (
+							''
+						)}
 						<div className='cardButtonRow'>
-							<EditMessageForm {...this.props.message} getData={this.props.getData} />
+							<EditMessageForm
+								{...this.props.message}
+								getData={this.props.getData}
+							/>
 							<Button
 								className='addItemBtn'
 								type='primary'
@@ -61,29 +65,43 @@ class MessageCard extends Component {
 								onClick={() => this.handleDelete(this.props.message.id)}
 							>
 								Delete
-				            </Button>
+							</Button>
 						</div>
 					</div>
 				) : (
-
-						<div className="friendCard">
-
-							<h6>
-								<span>{this.props.message.user.userName}</span>
-							</h6>
-							<p>Posted: {timeStamp} </p>
-						<p>Message: {this.props.message.message}</p>
-						{
-							this.props.message.editTimeStamp !== "" ?
-							<p>Last Edited {moment(this.props.message.editTimeStamp).fromNow()}</p> : ""
-						}
+					<>
+						<div className='friendCard'>
+							<div className='msgHeader'>
+								<h5>
+									<span>{this.props.message.user.userName}</span>
+								</h5>
+								<p>Posted: {timeStamp} </p>
+							</div>
+							<div className='msgBody'>
+								<p>Message: {this.props.message.message}</p>
+								{this.props.message.editTimeStamp !== '' ? (
+									<p>
+										Last Edited{' '}
+										{moment(this.props.message.editTimeStamp).fromNow()}
+									</p>
+								) : (
+									''
+								)}
+								<div>
+									<img
+										className='cardImg'
+										src='/images/ghost2.png'
+										alt='Smiley face'
+										height='42'
+										width='42'
+									/>
+								</div>
+							</div>
 						</div>
-
-					)}
+					</>
+				)}
 			</>
 		);
-
-
 	}
 }
 

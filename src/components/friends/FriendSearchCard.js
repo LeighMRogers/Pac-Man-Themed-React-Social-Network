@@ -5,16 +5,15 @@ import React, { Component } from 'react';
 class FriendSearchCard extends Component {
 	render() {
 		return (
-			<div>
-				<div>
-					<h6>{this.props.friend.userName}</h6>
-					<button
-						type='button'
-						onClick={() => this.props.addFriend(this.props.friend.id)}
-					>
-						Haunt
-					</button>
-				</div>
+			<div className='friendSearchRow'>
+				<h5>{this.props.friend.userName}</h5>
+				<button
+					type='button'
+					className='btn'
+					onClick={() => this.props.addFriend(this.props.friend.id)}
+				>
+					Haunt
+				</button>
 			</div>
 		);
 	}
