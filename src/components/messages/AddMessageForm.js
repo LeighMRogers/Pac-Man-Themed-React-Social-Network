@@ -58,34 +58,31 @@ class AddMessageForm extends React.Component {
 		return (
 			<div className='addBtnContainer'>
 				<Form>
-					<div className='formField'>
-						{/* <Input type="date" required onChange={this.handleFieldChange} id="date" placeholder="Date" prefix={
-                            <Icon type='calendar' style={{ color: 'rgba(0,0,0,.25)' }} />
-                        } /> */}
-					</div>
-					<div className='formField'>
-						<Input
-							type='text'
-							required
-							onChange={this.handleFieldChange}
-							id='message'
-							placeholder='Message'
-							prefix={
-								<Icon type='pic-left' style={{ color: 'rgba(0,0,0,.25)' }} />
-							}
-						/>
-					</div>
+					<div className='msgSubmitRow'>
+						<div className='formField'>
+							<Input
+								type='text'
+								required
+								onChange={this.handleFieldChange}
+								id='message'
+								placeholder='Message'
+								prefix={
+									<Icon type='pic-left' style={{ color: 'rgba(0,0,0,.25)' }} />
+								}
+							/>
+						</div>
 
-					<div className='formField'>
-						<Button
-							className='login-form-button'
-							type='primary'
-							disabled={this.state.loadingStatus}
-							onClick={this.handleClick}
-							icon='add'
-						>
-							Submit
-						</Button>
+						<div className='formField'>
+							<Button
+								className='login-form-button'
+								type='primary'
+								disabled={this.state.loadingStatus}
+								onClick={this.handleClick}
+								icon='add'
+							>
+								Submit
+							</Button>
+						</div>
 					</div>
 				</Form>
 			</div>

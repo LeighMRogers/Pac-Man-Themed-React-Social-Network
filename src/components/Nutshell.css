@@ -116,6 +116,7 @@ h1 {
 .msgBody {
 	display: flex;
 	justify-content: space-between;
+	margin-top: 1em;
 }
 
 /* login styling */
@@ -268,4 +269,9 @@ nav {
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
+}
+
+.msgSubmitRow {
+	display: flex;
+	margin-bottom: 2em;
 }
