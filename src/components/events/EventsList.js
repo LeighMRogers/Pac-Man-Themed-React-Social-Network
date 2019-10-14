@@ -10,10 +10,8 @@ class EventsList extends Component {
 	};
 
 	componentDidMount() {
-		console.log("inside",this.props.activeUser)
 		//getAll from AnimalManager and hang on to that data; put it in state
 		EventsManager.getEvents(this.props.activeUser).then(events => {
-			console.log('events array', events);
 			this.setState({
 				events: events
 			});
@@ -21,9 +19,7 @@ class EventsList extends Component {
 	}
 
 	getData = () => {
-
 		EventsManager.getEvents(this.props.activeUser).then(events => {
-			console.log('events array', events);
 			this.setState({
 				events: events
 			});

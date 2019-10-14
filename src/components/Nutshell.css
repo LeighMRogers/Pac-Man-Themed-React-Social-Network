@@ -1,5 +1,27 @@
+.wrapper,
+.ant-drawer-wrapper-body,
+.ant-drawer-header,
+.ant-drawer-title,
+h1,
+h5,
+h4,
 #root {
-	height: 100%;
+	background-color: #3a3939 !important;
+	color: white !important;
+}
+
+.ant-input:placeholder-shown {
+	color: black !important;
+}
+
+#searchQuery {
+	color: black;
+}
+
+.loginWrapper {
+	height: 100vh;
+	display: flex;
+	align-items: center;
 }
 
 .wrapper {
@@ -9,6 +31,7 @@
 	flex-wrap: wrap;
 	margin: auto;
 	max-width: 900px;
+	background-color: ;
 }
 
 .landingPage {
@@ -81,7 +104,8 @@
 }
 
 .addItemBtn {
-	margin: 1em;
+	margin-bottom: 1em;
+	margin-right: 1em;
 	align-self: flex-end;
 }
 
@@ -92,11 +116,19 @@
 }
 
 .myCard {
-	background-color: lightblue;
+	background-color: #d3cfcc;
+	margin: 1em;
+	padding: 1em;
+	border-radius: 5px;
+	color: black !important;
 }
 
 .friendCard {
-	background-color: lightcoral;
+	background-color: #9b8894;
+	margin: 1em;
+	padding: 1em;
+	border-radius: 5px;
+	color: black !important;
 }
 
 .anticon {
@@ -114,4 +146,37 @@ nav {
 
 .navBtn {
 	width: 100%;
+}
+
+.nav-link {
+	padding: 0px;
+
+	margin-bottom: 0.5em;
+}
+
+.ant-btn-primary,
+.ant-btn-sm,
+.navBtn,
+.login-form-button {
+	background-color: #572e4c !important;
+	border-color: #31192b !important;
+	color: white !important;
+}
+
+.sectionHeader {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-top: 0.5em;
+	margin: 1em;
+	margin-bottom: 0em;
+}
+
+.friendSearch {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: white !important;
+	margin-top: 2em;
+	margin-bottom: 2em;
 }

@@ -1,14 +1,14 @@
 import React from 'react';
-import { Drawer, Button, Form, Icon, Input, } from 'antd';
-import EventsManager from "../../modules/EventsManager"
+import { Drawer, Button, Form, Icon, Input } from 'antd';
+import EventsManager from '../../modules/EventsManager';
 
 class AddEventForm extends React.Component {
 	state = {
 		visible: false,
-		userId: "",
-		date: "",
-		title: "",
-		location: "",
+		userId: '',
+		date: '',
+		title: '',
+		location: '',
 		loadingStatus: false
 	};
 
@@ -26,39 +26,37 @@ class AddEventForm extends React.Component {
 	onClose = () => {
 		this.setState({
 			visible: false
-		})
+		});
 	};
-
 
 	addNewEvent = () => {
 		// evt.preventDefault();
-		if (this.state.title === "" || this.state.date === "" || this.state.summary === "" || this.state.url === "") {
-			window.alert("Please fill out all the fields");
+		if (
+			this.state.title === '' ||
+			this.state.date === '' ||
+			this.state.summary === '' ||
+			this.state.url === ''
+		) {
+			window.alert('Please fill out all the fields');
 		} else {
-			let userId = parseInt(sessionStorage.getItem("activeUser"))
+			let userId = parseInt(sessionStorage.getItem('activeUser'));
 			const event = {
 				date: this.state.date,
 				title: this.state.title,
 				location: this.state.location,
 				userId: userId
 			};
-			EventsManager.post(event)
-				.then(this.props.getData)
-
-
+			EventsManager.post(event).then(this.props.getData);
 		}
-	}
+	};
 	handleClick = evt => {
 		evt.preventDefault();
-		this.addNewEvent()
-		this.onClose()
-		document.querySelector("#title").value = ""
-		document.querySelector("#date").value = ""
-		document.querySelector("#location").value = ""
-
-	}
-
-
+		this.addNewEvent();
+		this.onClose();
+		document.querySelector('#title').value = '';
+		document.querySelector('#date').value = '';
+		document.querySelector('#location').value = '';
+	};
 
 	render() {
 		return (
@@ -82,28 +80,57 @@ class AddEventForm extends React.Component {
 					visible={this.state.visible}
 				>
 					<Form>
+						<div className='formField'>
+							<Input
+								type='date'
+								required
+								onChange={this.handleFieldChange}
+								id='date'
+								placeholder='Date'
+								prefix={
+									<Icon type='calendar' style={{ color: 'rgba(0,0,0,.25)' }} />
+								}
+							/>
+						</div>
+						<div className='formField'>
+							<Input
+								type='text'
+								required
+								onChange={this.handleFieldChange}
+								id='title'
+								placeholder='Title'
+								prefix={
+									<Icon type='pic-left' style={{ color: 'rgba(0,0,0,.25)' }} />
+								}
+							/>
+						</div>
+						<div className='formField'>
+							<Input
+								type='text'
+								required
+								onChange={this.handleFieldChange}
+								id='location'
+								placeholder='Location'
+								prefix={
+									<Icon
+										type='align-left'
+										style={{ color: 'rgba(0,0,0,.25)' }}
+									/>
+								}
+							/>
+						</div>
 
-						<div className="formField">
-							<Input type="date" required onChange={this.handleFieldChange} id="date" placeholder="Date" prefix={
-								<Icon type='calendar' style={{ color: 'rgba(0,0,0,.25)' }} />
-							} />
+						<div className='formField'>
+							<Button
+								className='login-form-button'
+								type='primary'
+								disabled={this.state.loadingStatus}
+								onClick={this.handleClick}
+								icon='add'
+							>
+								Submit
+							</Button>
 						</div>
-						<div className="formField">
-							<Input type="text" required onChange={this.handleFieldChange} id="title" placeholder="Title" prefix={
-								<Icon type='pic-left' style={{ color: 'rgba(0,0,0,.25)' }} />
-							} />
-						</div>
-						<div className="formField">
-							<Input type="text" required onChange={this.handleFieldChange} id="location" placeholder="Location" prefix={
-								<Icon type='align-left' style={{ color: 'rgba(0,0,0,.25)' }} />
-							} />
-						</div>
-
-						<div className="formField">
-							<Button className="login-form-button" type="primary" disabled={this.state.loadingStatus} onClick={this.handleClick} icon="add">Submit
-								</Button>
-						</div>
-
 					</Form>
 				</Drawer>
 			</div>

@@ -3,12 +3,10 @@
 import React, { Component } from 'react';
 
 class FriendCard extends Component {
-
 	render() {
-        console.log("friends props", this.props)
 		return (
 			<div>
-				<div>
+				<div className='friendCard'>
 					<h6>Name: {this.props.friend.user.name}</h6>
 					<button
 						type='button'

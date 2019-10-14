@@ -7,17 +7,7 @@ import { Spring } from 'react-spring/renderprops';
 // import Registration from './auth/Registration';
 
 class Nutshell extends Component {
-	// state = {
-	// 	activeUser: ""
-	// }
-	// componentDidMount() {
-	// 	this.setUserState()
-	// }
-	// setUserState = () => {
-	// 	this.setState({ activeUser: sessionStorage.getItem('activeUser') })
-	// }
 	render() {
-		console.log('nutshell props:', this.props);
 		return (
 			<React.Fragment>
 				{this.props.user ? (
@@ -49,11 +39,9 @@ class Nutshell extends Component {
 					</Spring>
 				) : (
 					<section className='landingPage'>
-						<Login
-							// setUser={this.props.setUser} user={props.user}
-							{...this.props}
-						/>
-						{/* <Registration setUser={this.setUser} user={this.state.user} /> */}
+						<div className='loginWrapper'>
+							<Login {...this.props} />
+						</div>
 					</section>
 				)}
 			</React.Fragment>

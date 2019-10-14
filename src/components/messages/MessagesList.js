@@ -10,10 +10,8 @@ class MessagesList extends Component {
 	};
 
 	componentDidMount() {
-		console.log("inside",this.props.activeUser)
 		//getAll from AnimalManager and hang on to that data; put it in state
 		MessagesManager.getMessages(this.props.activeUser).then(messages => {
-			console.log('messages array', messages);
 			this.setState({
 				messages: messages
 			});
@@ -21,9 +19,7 @@ class MessagesList extends Component {
 	}
 
 	getData = () => {
-
 		MessagesManager.getMessages(this.props.activeUser).then(messages => {
-			console.log('messages array', messages);
 			this.setState({
 				messages: messages
 			});
@@ -42,7 +38,7 @@ class MessagesList extends Component {
 						getData={this.getData}
 					/>
 				))}
-                <AddMessageForm getData={this.getData} />
+				<AddMessageForm getData={this.getData} />
 			</div>
 		);
 	}
