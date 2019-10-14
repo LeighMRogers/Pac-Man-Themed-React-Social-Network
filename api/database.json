@@ -1,309 +1,317 @@
 {
-	"users": [
-		{
-			"id": 1,
-			"name": "Inky",
-			"userName": "Inky",
-			"password": "pass"
-		},
-		{
-			"id": 2,
-			"name": "Blinky",
-			"userName": "Blinky",
-			"password": "pass"
-		},
-		{
-			"id": 3,
-			"name": "Pinky",
-			"userName": "Pinky",
-			"password": "pass"
-		},
-		{
-			"name": "Sue",
-			"userName": "Sue",
-			"password": "pass",
-			"id": 4
-		},
-		{
-			"name": "Clyde",
-			"userName": "Clyde",
-			"password": "pass",
-			"id": 5
-		},
-		{
-			"name": "PAC-MAN-H8TR-89",
-			"userName": "PAC-MAN-H8TR-89",
-			"password": "pass",
-			"id": 6
-		}
-	],
-	"friends": [
-		{
-			"userId": 5,
-			"friendInitiate": 1,
-			"id": 10
-		},
-		{
-			"userId": 3,
-			"friendInitiate": 2,
-			"id": 12
-		},
-		{
-			"userId": 6,
-			"friendInitiate": 1,
-			"id": 22
-		},
-		{
-			"userId": 2,
-			"friendInitiate": 3,
-			"id": 23
-		},
-		{
-			"userId": 4,
-			"friendInitiate": 3,
-			"id": 26
-		},
-		{
-			"userId": 5,
-			"friendInitiate": 3,
-			"id": 27
-		},
-		{
-			"userId": 2,
-			"friendInitiate": 4,
-			"id": 28
-		},
-		{
-			"userId": 5,
-			"friendInitiate": 4,
-			"id": 29
-		},
-		{
-			"userId": 2,
-			"friendIntiate": 5,
-			"id": 30
-		},
-		{
-			"userId": 1,
-			"friendInitiate": 5,
-			"id": 31
-		},
-		{
-			"userId": 2,
-			"friendInitiate": 6,
-			"id": 32
-		},
-		{
-			"userId": 4,
-			"friendInitiate": 1,
-			"id": 33
-		},
-		{
-			"userId": 4,
-			"friendInitiate": 6,
-			"id": 34
-		},
-		{
-			"userId": 2,
-			"friendInitiate": 1,
-			"id": 35
-		}
-	],
-	"articles": [
-		{
-			"userId": 1,
-			"date": "2019-09-02",
-			"title": "Lets explore Nashville!!!",
-			"summary": "My friend just shared this with me, you can watch videos of the best things to do and see in Nashville!",
-			"url": "https://seenash.com",
-			"id": 2
-		},
-		{
-			"id": 3,
-			"userId": 3,
-			"date": "2019-09-03",
-			"title": "Best Restaurants in Town",
-			"summary": "Friends.  Lets start going to some of these new restaurants.  Its a well curated list of the best in Nashville.",
-			"url": "https://www.foodnetwork.com/restaurants/photos/restaurant-guide-nashville"
-		},
-		{
-			"id": 4,
-			"userId": 6,
-			"date": "2019-09-01",
-			"title": "Nashville Pride ",
-			"summary": "This looks so amazing, lets be sure to put this in events next year!!!!  xxxx",
-			"url": "https://www.nashvillepride.org"
-		},
-		{
-			"id": 5,
-			"userId": 3,
-			"date": "2019-09-01",
-			"title": "Nashville Pride ",
-			"summary": "This looks so amazing, lets be sure to put this in events next year!!!!  xxxx",
-			"url": "https://www.nashvillepride.org"
-		},
-		{
-			"id": 6,
-			"userId": 1,
-			"date": "2019-09-01",
-			"title": "Nashville Pride ",
-			"summary": "This looks so amazing, lets be sure to put this in events next year!!!!  xxxx",
-			"url": "https://www.nashvillepride.org"
-		},
-		{
-			"userId": 3,
-			"date": "2019-10-16",
-			"title": "WHAT",
-			"summary": "its a what what what what",
-			"url": "www.what.com",
-			"id": 7
-		},
-		{
-			"userId": 2,
-			"date": "2019-10-23",
-			"title": "OK!!!!",
-			"summary": "looks good",
-			"url": "www.google.coms",
-			"id": 8
-		}
-	],
-	"messages": [
-		{
-			"userId": 1,
-			"date": "2019-09-01",
-			"message": "Hey all, Im super excited for this weekend. Who is coming out?",
-			"id": 1,
-			"editTimeStamp": ""
-		},
-		{
-			"userId": 2,
-			"date": "2019-09-02",
-			"message": "Ill be there!",
-			"id": 2,
-			"editTimeStamp": ""
-		},
-		{
-			"id": 3,
-			"userId": 4,
-			"date": "2019-09-03",
-			"message": "Jules and I are having dinner with her parents but will meet you after, X",
-			"editTimeStamp": ""
-		},
-		{
-			"id": 4,
-			"userId": 3,
-			"date": "2019-09-03",
-			"message": "Yes!!  Cant wait.  BTW all - I just hit my steps goal for the month, WOO!!!",
-			"editTimeStamp": ""
-		},
-		{
-			"userId": 1,
-			"date": "2019-09-03",
-			"message": "congrats!!!!!!!",
-			"id": 5,
-			"editTimeStamp": ""
-		},
-		{
-			"id": 6,
-			"userId": 5,
-			"date": "2019-09-03",
-			"message": "Well done Tom, Cheers! ",
-			"editTimeStamp": ""
-		},
-		{
-			"userId": 1,
-			"date": "2019-10-10",
-			"message": "hi",
-			"id": 7,
-			"editTimeStamp": ""
-		}
-	],
-	"events": [
-		{
-			"id": 1,
-			"userId": 4,
-			"title": "Dinner and drinks 7pm @ GRAZE",
-			"date": "2019-10-25",
-			"location": "east nashville"
-		},
-		{
-			"userId": 2,
-			"date": "2020-01-25",
-			"title": "Frist Friday Art Deco Exhibit",
-			"location": "Frist Art Gallery",
-			"id": 3
-		},
-		{
-			"id": 4,
-			"userId": 3,
-			"title": "Sense and Sensibility Screening and Drinks",
-			"date": "2020-03-25",
-			"location": "Belcourt Theater"
-		},
-		{
-			"userId": 6,
-			"title": "Painting Class at Dabble Studios!",
-			"date": "2019-12-10",
-			"location": "Germantown",
-			"id": 5
-		},
-		{
-			"userId": 1,
-			"title": "Mo-Town Mondays Dance Party",
-			"date": "2019-11-17",
-			"location": "5 Spot ",
-			"id": 6
-		}
-	],
-	"tasks": [
-		{
-			"id": 1,
-			"userId": 1,
-			"title": "Working out EVERY day this month",
-			"dueDate": "2023-03-24",
-			"completed": "yes"
-		},
-		{
-			"id": 2,
-			"userId": 2,
-			"title": "Get that promotion!!",
-			"dueDate": "2019-11-24",
-			"completed": "no"
-		},
-		{
-			"id": 3,
-			"userId": 3,
-			"title": "learn to play piano",
-			"dueDate": "2020-11-24",
-			"completed": "no"
-		},
-		{
-			"id": 4,
-			"userId": 3,
-			"title": "Learn to Juggle",
-			"dueDate": "2020-11-24",
-			"completed": "yes"
-		},
-		{
-			"id": 5,
-			"userId": 5,
-			"title": "Submit 5 applications to a new Job!",
-			"dueDate": "2020-11-24",
-			"completed": "yes"
-		},
-		{
-			"dueDate": "2019-10-10",
-			"title": "so so so",
-			"completed": "yes",
-			"userId": 1,
-			"id": 6
-		},
-		{
-			"dueDate": "2019-10-17",
-			"title": "cool!",
-			"completed": "no",
-			"userId": 1,
-			"id": 7
-		}
-	]
+  "users": [
+    {
+      "id": 1,
+      "name": "Inky",
+      "userName": "Inky",
+      "password": "pass"
+    },
+    {
+      "id": 2,
+      "name": "Blinky",
+      "userName": "Blinky",
+      "password": "pass"
+    },
+    {
+      "id": 3,
+      "name": "Pinky",
+      "userName": "Pinky",
+      "password": "pass"
+    },
+    {
+      "name": "Sue",
+      "userName": "Sue",
+      "password": "pass",
+      "id": 4
+    },
+    {
+      "name": "Clyde",
+      "userName": "Clyde",
+      "password": "pass",
+      "id": 5
+    },
+    {
+      "name": "PAC-MAN-H8TR-89",
+      "userName": "PAC-MAN-H8TR-89",
+      "password": "pass",
+      "id": 6
+    }
+  ],
+  "friends": [
+    {
+      "userId": 5,
+      "friendInitiate": 1,
+      "id": 10
+    },
+    {
+      "userId": 3,
+      "friendInitiate": 2,
+      "id": 12
+    },
+    {
+      "userId": 6,
+      "friendInitiate": 1,
+      "id": 22
+    },
+    {
+      "userId": 2,
+      "friendInitiate": 3,
+      "id": 23
+    },
+    {
+      "userId": 4,
+      "friendInitiate": 3,
+      "id": 26
+    },
+    {
+      "userId": 5,
+      "friendInitiate": 3,
+      "id": 27
+    },
+    {
+      "userId": 2,
+      "friendInitiate": 4,
+      "id": 28
+    },
+    {
+      "userId": 5,
+      "friendInitiate": 4,
+      "id": 29
+    },
+    {
+      "userId": 2,
+      "friendIntiate": 5,
+      "id": 30
+    },
+    {
+      "userId": 1,
+      "friendInitiate": 5,
+      "id": 31
+    },
+    {
+      "userId": 2,
+      "friendInitiate": 6,
+      "id": 32
+    },
+    {
+      "userId": 4,
+      "friendInitiate": 6,
+      "id": 34
+    },
+    {
+      "userId": 4,
+      "friendInitiate": 5,
+      "id": 36
+    },
+    {
+      "userId": 3,
+      "friendInitiate": 5,
+      "id": 37
+    },
+    {
+      "userId": 2,
+      "friendInitiate": 5,
+      "id": 38
+    },
+    {
+      "userId": 4,
+      "friendInitiate": 1,
+      "id": 39
+    }
+  ],
+  "articles": [
+    {
+      "userId": 1,
+      "date": "2019-09-02",
+      "title": "Lets explore the Arcade!!!",
+      "summary": "My friend just shared this with me, you can watch videos of the best things to do and see in the Arcade!",
+      "url": "https://seenash.com",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "date": "2019-09-03",
+      "title": "Best Coin-Up in Town",
+      "summary": "Friends.  Lets start going to some of these new Coin-UPs.  Its a well curated list of the best in Nashville.",
+      "url": "https://www.arcade.com"
+    },
+    {
+      "id": 4,
+      "userId": 6,
+      "date": "2019-09-01",
+      "title": "Nashville Spooky ",
+      "summary": "This looks so amazing, lets be sure to put this in events next year!!!!",
+      "url": "https://www.nashvillespooky.com"
+    },
+    {
+      "userId": 3,
+      "date": "2019-10-16",
+      "title": "COIN UP MEETING",
+      "summary": "its a news you can't miss!",
+      "url": "https://www.coin-up.com",
+      "id": 7
+    },
+    {
+      "userId": 2,
+      "date": "2019-10-23",
+      "title": "Pac-Man videogames are LAME",
+      "summary": "Pac-Man videogames are old and nobody like them!",
+      "url": "https://www.pac-man.com",
+      "id": 8
+    }
+  ],
+  "messages": [
+    {
+      "userId": 1,
+      "date": "2019-09-01",
+      "message": "Hey all, Im super excited for this hunting-weekend. Who is coming out??",
+      "editTimeStamp": "2019-10-14T18:20:44.286Z",
+      "id": 1
+    },
+    {
+      "userId": 2,
+      "date": "2019-09-02",
+      "message": "Ill be there!",
+      "id": 2,
+      "editTimeStamp": ""
+    },
+    {
+      "id": 3,
+      "userId": 4,
+      "date": "2019-09-03",
+      "message": "Pinky and I are having dinner with her parents but will meet you after",
+      "editTimeStamp": ""
+    },
+    {
+      "id": 4,
+      "userId": 3,
+      "date": "2019-09-03",
+      "message": "Yes!!  Cant wait.  BTW all - I just hit my steps goal for the month, WOO!!!",
+      "editTimeStamp": ""
+    },
+    {
+      "userId": 1,
+      "date": "2019-09-03",
+      "message": "Congrats!!!!!!!!",
+      "editTimeStamp": "2019-10-14T18:19:21.571Z",
+      "id": 5
+    },
+    {
+      "id": 6,
+      "userId": 5,
+      "date": "2019-09-03",
+      "message": "Well done, Cheers! ",
+      "editTimeStamp": ""
+    },
+    {
+      "date": "2019-10-14T17:36:20.210Z",
+      "message": "Let's have a Spirit tonight!",
+      "userId": 5,
+      "editTimeStamp": "",
+      "id": 7
+    },
+    {
+      "date": "2019-10-14T18:20:17.708Z",
+      "message": "Hello world!",
+      "userId": 1,
+      "editTimeStamp": "",
+      "id": 8
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": 4,
+      "title": "Dinner and drinks 7pm @ MSS.Pac-Man",
+      "date": "2019-10-25",
+      "location": "east nashville"
+    },
+    {
+      "userId": 2,
+      "date": "2020-01-25",
+      "title": "Frist Friday VideoGames Exhibit",
+      "location": "Frist Art Gallery",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "userId": 3,
+      "title": "Sense and Sensibility Screening about Ghosts",
+      "date": "2020-03-25",
+      "location": "Belcourt Theater"
+    },
+    {
+      "userId": 6,
+      "title": "Painting Class at Dabble Studios! Come and change your color!",
+      "date": "2019-12-10",
+      "location": "Germantown",
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "title": "Mo-Town Mondays Dance Party! It's a Spooctacular party!",
+      "date": "2019-11-17",
+      "location": "5 Spot ",
+      "id": 6
+    },
+    {
+      "date": "2019-10-14",
+      "title": "Demo Day",
+      "location": "NSS",
+      "userId": 1,
+      "id": 7
+    }
+  ],
+  "tasks": [
+    {
+      "id": 2,
+      "userId": 2,
+      "title": "Let't try to don't be blue today",
+      "dueDate": "2019-11-24",
+      "completed": "no"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "title": "learn how to hide",
+      "dueDate": "2020-11-24",
+      "completed": "no"
+    },
+    {
+      "id": 4,
+      "userId": 3,
+      "title": "Learn to make a boo-noise",
+      "dueDate": "2020-11-24",
+      "completed": "yes"
+    },
+    {
+      "id": 5,
+      "userId": 5,
+      "title": "Submit 5 applications to a new videogame!",
+      "dueDate": "2020-11-24",
+      "completed": "yes"
+    },
+    {
+      "dueDate": "2019-10-10",
+      "title": "gotta catch the yellow dude",
+      "completed": "yes",
+      "userId": 1,
+      "id": 6
+    },
+    {
+      "dueDate": "2019-10-17",
+      "title": "Meet new ghosts ",
+      "completed": "yes",
+      "userId": 1,
+      "id": 7
+    },
+    {
+      "dueDate": "2019-10-14",
+      "title": "Present the project",
+      "completed": "yes",
+      "userId": 5,
+      "id": 8
+    }
+  ]
 }
