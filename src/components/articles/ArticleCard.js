@@ -86,11 +86,11 @@ class ArticleCard extends Component {
 									</h3>
 									<p>{this.props.article.user.name}</p>
 									<p>Summary: {this.props.article.summary}</p>
-									<p>Url: {this.props.article.url}</p>
+									<a href={this.props.article.url} target="_blank"></a>
 									<p>date: {this.props.article.date}</p>
 									<img
 										className='cardImg'
-										src='/images/ghost2.png'
+										src={`/images/ghost${this.props.article.userId}.png`}
 										alt='Smiley face'
 										height='42'
 										width='42'
