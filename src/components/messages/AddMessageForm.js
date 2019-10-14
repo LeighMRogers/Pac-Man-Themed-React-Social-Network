@@ -54,7 +54,6 @@ class AddMessageForm extends React.Component {
 		evt.preventDefault();
 		this.addNewMessage()
 		this.onClose()
-		document.querySelector("#date").value = ""
 		document.querySelector("#message").value = ""
 
 	}
