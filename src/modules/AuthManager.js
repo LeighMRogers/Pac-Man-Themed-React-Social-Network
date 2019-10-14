@@ -13,5 +13,5 @@ export default {
             },
             body: JSON.stringify(user)
         }).then(Response => Response.json())
-    }
+    },
 }

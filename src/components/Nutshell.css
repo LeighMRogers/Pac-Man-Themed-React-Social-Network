@@ -115,7 +115,7 @@ h2 {
 .logoPlaceholder {
 	height: 153px;
 	width: 145px;
-	background-image: url('/images/ghost1.png');
+	/* background-image: url('/images/ghost1.png'); */
 	background-size: cover;
 	margin-bottom: 2em;
 }
