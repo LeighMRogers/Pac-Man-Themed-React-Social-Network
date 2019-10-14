@@ -39,11 +39,8 @@ class MessageCard extends Component {
 			<>
 				{this.state.myCard ? (
 					<div className='myCard'>
-						<h6>
-							<span>{this.props.message.user.userName}</span>
-						</h6>
 						<p>Posted: {timeStamp} </p>
-						<p>Message: {this.props.message.message}</p>
+						<p>{this.props.message.message}</p>
 						{this.props.message.editTimeStamp !== '' ? (
 							<p>
 								Last Edited {moment(this.props.message.editTimeStamp).fromNow()}
@@ -78,7 +75,7 @@ class MessageCard extends Component {
 								<p>Posted: {timeStamp} </p>
 							</div>
 							<div className='msgBody'>
-								<p>Message: {this.props.message.message}</p>
+								<p>{this.props.message.message}</p>
 								{this.props.message.editTimeStamp !== '' ? (
 									<p>
 										Last Edited{' '}
