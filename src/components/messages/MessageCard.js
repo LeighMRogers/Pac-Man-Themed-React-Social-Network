@@ -44,13 +44,13 @@ class MessageCard extends Component {
 						<h6>
 							<span>{this.props.message.user.userName}</span>
 						</h6>
-						<p>Date: {timeStamp} </p>
+						<p>Posted: {timeStamp} </p>
 						<p>Message: {this.props.message.message}</p>
 						{
 							this.props.message.editTimeStamp !== "" ?
 							<p>Last Edited {moment(this.props.message.editTimeStamp).fromNow()}</p> : ""
 						}
-							<div className='cardButtonRow'>
+						<div className='cardButtonRow'>
 							<EditMessageForm {...this.props.message} getData={this.props.getData} />
 							<Button
 								className='addItemBtn'
@@ -61,7 +61,7 @@ class MessageCard extends Component {
 								onClick={() => this.handleDelete(this.props.message.id)}
 							>
 								Delete
-				    </Button>
+				            </Button>
 						</div>
 					</div>
 				) : (
@@ -71,8 +71,12 @@ class MessageCard extends Component {
 							<h6>
 								<span>{this.props.message.user.userName}</span>
 							</h6>
-							<p>Date: {this.props.message.date}</p>
-							<p>Message: {this.props.message.message}</p>
+							<p>Posted: {timeStamp} </p>
+						<p>Message: {this.props.message.message}</p>
+						{
+							this.props.message.editTimeStamp !== "" ?
+							<p>Last Edited {moment(this.props.message.editTimeStamp).fromNow()}</p> : ""
+						}
 						</div>
 
 					)}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Form, Icon, Input,  } from 'antd';
+import { Button, Form, Icon, Input, Drawer } from 'antd';
 import MessagesManager from "../../modules/MessagesManager"
 import moment from "moment";
 class EditMessageForm extends React.Component {
@@ -60,7 +60,6 @@ class EditMessageForm extends React.Component {
             })
     }
 
-
     handleClick = evt => {
         evt.preventDefault();
         this.updateExistingMessage()
@@ -71,7 +70,26 @@ class EditMessageForm extends React.Component {
     render() {
         return (
             <div className='addBtnContainer'>
-                <Form className='login-form'>
+            <Button
+                className='addItemBtn'
+                type='primary'
+                shape='round'
+                icon='edit'
+                size='small'
+                onClick={this.showDrawer}
+            >
+                Edit
+            </Button>
+
+            <Drawer
+                width='350'
+                title='Edit News'
+                placement='right'
+                closable={false}
+                onClose={this.onClose}
+                visible={this.state.visible}
+            >
+               <Form className='login-form'>
                     <div className="formField">
                         {/* <Input type="date"
                         required onChange={this.handleFieldChange}
@@ -92,7 +110,8 @@ class EditMessageForm extends React.Component {
                         </Button>
                     </div>
                 </Form>
-            </div>
+            </Drawer>
+        </div>
         );
     }
 }
