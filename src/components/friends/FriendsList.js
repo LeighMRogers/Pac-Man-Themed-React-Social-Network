@@ -68,6 +68,7 @@ class FriendsList extends Component {
 						/>
 					))}
 				</div>
+				<a href='https://pacman-master.com/'>Easter Egg!</a>
 			</>
 		);
 	}
