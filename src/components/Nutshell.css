@@ -12,8 +12,15 @@ h4,
 	/* font-family: 'Minecraftia-Regular', sans-serif; */
 }
 
-p {
+p,
+h6,
+.ant-drawer-title {
 	font-family: 'Minecraftia-Regular', sans-serif;
+}
+
+.ant-drawer-title {
+	margin-top: 2em !important;
+	text-align: center;
 }
 
 h1,
@@ -207,6 +214,10 @@ h2 {
 	padding: 2em;
 }
 
+.friendCardNav h6 {
+	margin-top: 1em;
+}
+
 .friendSearchRow {
 	display: flex;
 	flex-direction: row;
@@ -300,4 +311,8 @@ nav {
 .msgSubmitRow {
 	display: flex;
 	margin-bottom: 2em;
+}
+
+.ant-drawer-wrapper-body {
+	overflow: hidden;
 }
