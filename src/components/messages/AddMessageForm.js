@@ -31,7 +31,6 @@ class AddMessageForm extends React.Component {
 		})
 	};
 
-
 	addNewMessage = () => {
 		// evt.preventDefault();
 		if (this.state.message === "") {
@@ -47,9 +46,9 @@ class AddMessageForm extends React.Component {
 			MessagesManager.post(message)
 				.then(this.props.getData)
 
-
 		}
 	}
+
 	handleClick = evt => {
 		evt.preventDefault();
 		this.addNewMessage()
@@ -57,8 +56,6 @@ class AddMessageForm extends React.Component {
 		document.querySelector("#message").value = ""
 
 	}
-
-
 
 	render() {
 		return (
