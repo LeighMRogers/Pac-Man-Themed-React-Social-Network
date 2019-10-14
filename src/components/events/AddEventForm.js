@@ -132,6 +132,13 @@ class AddEventForm extends React.Component {
 							</Button>
 						</div>
 					</Form>
+					<img
+						src='/images/chase.gif'
+						alt='Smiley face'
+						height='auto'
+						width='350px'
+						z-index='-2'
+					/>
 				</Drawer>
 			</div>
 		);

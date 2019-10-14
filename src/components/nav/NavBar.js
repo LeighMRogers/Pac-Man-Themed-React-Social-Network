@@ -3,20 +3,39 @@ import { Link, withRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FriendsList from '../friends/FriendsList';
 import { Button } from 'antd';
-import AuthManager from '../../modules/AuthManager'
+import AuthManager from '../../modules/AuthManager';
 
 class NavBar extends Component {
+	state = {
+		userName: ''
+	};
+
 	handleLogout = () => {
 		this.props.clearUser();
 		this.props.history.push('/');
 	};
+
+	componentDidMount() {
+		AuthManager.getUserById(this.props.activeUser).then(data => {
+			this.setState({
+				userName: data.name
+			});
+		});
+	}
+
 	render() {
+		console.log(this.state.userName);
 		return (
 			<div className='navWrapper'>
 				<div className='logoPlaceholder'>
-				<img height='153px' width='145px' src={`/images/ghost${this.props.activeUser}.png`}></img>
+					<img
+						height='153px'
+						width='145px'
+						src={`/images/ghost${this.props.activeUser}.png`}
+					></img>
 				</div>
 				<h2>GHOSTpac</h2>
+				<p>Welcome {this.state.userName}</p>
 				<nav>
 					<ul className='nav nav-pills nav-fill'>
 						<li className='nav-item'>

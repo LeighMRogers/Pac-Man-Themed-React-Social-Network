@@ -112,6 +112,13 @@ class AddTaskForm extends React.Component {
 								Submit
 							</Button>
 						</div>
+						<img
+							src='/images/chase.gif'
+							alt='Smiley face'
+							height='auto'
+							width='350px'
+							z-index='-2'
+						/>
 					</Form>
 				</Drawer>
 			</div>
