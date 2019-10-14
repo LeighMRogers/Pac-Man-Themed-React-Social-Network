@@ -49,7 +49,7 @@ class AddArticleForm extends React.Component {
 				date: this.state.date,
 				title: this.state.title,
 				summary: this.state.summary,
-				url: this.state.url,
+				url: `https://${this.state.url}`,
 				userId: userId
 			};
 			ArticleManager.post(article).then(this.props.getData);
