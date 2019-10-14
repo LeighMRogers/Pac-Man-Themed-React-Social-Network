@@ -44,7 +44,7 @@ class MessageCard extends Component {
 						<h6>
 							<span>{this.props.message.user.userName}</span>
 						</h6>
-						<p>Date: {timeStamp} </p>
+						<p>Posted: {timeStamp} </p>
 						<p>Message: {this.props.message.message}</p>
 						{
 							this.props.message.editTimeStamp !== "" ?
@@ -52,16 +52,6 @@ class MessageCard extends Component {
 						}
 						<div className='cardButtonRow'>
 							<EditMessageForm {...this.props.message} getData={this.props.getData} />
-                            <Button
-								className='addItemBtn'
-								type='primary'
-								shape='round'
-								icon='edit'
-								size='small'
-								onClick={() => EditMessageForm.updateExistingMessage(this.props.message.id)}
-							>
-								Edit
-				            </Button>
 							<Button
 								className='addItemBtn'
 								type='primary'
@@ -81,8 +71,12 @@ class MessageCard extends Component {
 							<h6>
 								<span>{this.props.message.user.userName}</span>
 							</h6>
-							<p>Date: {this.props.message.date}</p>
-							<p>Message: {this.props.message.message}</p>
+							<p>Posted: {timeStamp} </p>
+						<p>Message: {this.props.message.message}</p>
+						{
+							this.props.message.editTimeStamp !== "" ?
+							<p>Last Edited {moment(this.props.message.editTimeStamp).fromNow()}</p> : ""
+						}
 						</div>
 
 					)}
