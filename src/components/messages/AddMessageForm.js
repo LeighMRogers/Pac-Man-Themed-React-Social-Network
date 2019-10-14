@@ -88,16 +88,6 @@ class AddMessageForm extends React.Component {
 						</Button>
 					</div>
 				</Form>
-				<Button
-					className='addItemBtn'
-					type='primary'
-					shape='round'
-					icon='plus'
-					// size='large'
-					onClick={this.showDrawer}
-				>
-					Add New
-				</Button>
 			</div>
 		);
 	}
