@@ -59,7 +59,7 @@ class ArticleCard extends Component {
 											<span>{this.props.article.title}</span>
 										</h3>
 										<p>Summary: {this.props.article.summary}</p>
-										<p>Url: {this.props.article.url}</p>
+										<p><a href={this.props.article.url} target="_blank">{this.props.article.url}</a></p>
 										<p>date: {this.props.article.date}</p>
 										<div className='cardButtonRow'>
 											<EditArticleForm
@@ -86,7 +86,7 @@ class ArticleCard extends Component {
 									</h3>
 									<p>{this.props.article.user.name}</p>
 									<p>Summary: {this.props.article.summary}</p>
-									<a href={this.props.article.url} target="_blank"></a>
+									<p><a href={this.props.article.url} target="_blank">{this.props.article.url}</a></p>
 									<p>date: {this.props.article.date}</p>
 									<img
 										className='cardImg'
