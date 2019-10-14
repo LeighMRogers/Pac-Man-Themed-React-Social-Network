@@ -13,6 +13,7 @@ class NavBar extends Component {
 		return (
 			<div className='navWrapper'>
 				<div className='logoPlaceholder'></div>
+				<h2>GHOSTpac</h2>
 				<nav>
 					<ul className='nav nav-pills nav-fill'>
 						<li className='nav-item'>

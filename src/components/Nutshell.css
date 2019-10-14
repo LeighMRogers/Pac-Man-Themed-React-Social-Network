@@ -3,6 +3,7 @@
 .ant-drawer-header,
 .ant-drawer-title,
 h1,
+h2,
 h5,
 h4,
 #root {
@@ -15,7 +16,7 @@ p {
 	font-family: 'Minecraftia-Regular', sans-serif;
 }
 
-h1 {
+h1, h2 {
 	font-family: 'PAC-FONT', sans-serif;
 	letter-spacing: 5px;
 }
@@ -87,6 +88,28 @@ h1 {
 	list-style: none;
 }
 
+.insertCoin {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+.insertCoin {
+    -webkit-animation-name: blinker;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 1);
+    -webkit-animation-duration: 2.5s;
+}
+
+.insertCoin {
+    font-size: 1.5em;
+    text-align: center;
+}
+
 .logoPlaceholder {
 	height: 153px;
 	width: 145px;
@@ -136,6 +159,7 @@ h1 {
 .regLink {
 	color: rgb(15, 91, 163);
 	cursor: pointer;
+	margin-top: 1em;
 }
 
 .addItemBtn {

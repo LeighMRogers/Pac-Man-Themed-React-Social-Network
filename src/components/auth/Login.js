@@ -63,7 +63,19 @@ class Login extends Component {
 						>
 							{props => (
 								<div style={props}>
-									<p>Listen Buddy...you need to log in.</p>
+									<h1>
+										GHOST---pac
+									</h1>
+									<div className='landingLogoPlaceholder'>
+									<img
+										src='/images/insertCoin.gif'
+										alt='Smiley face'
+										height='auto'
+										width='350px'
+										z-index= '-2'
+									/>
+									</div>
+									<p className='insertCoin'>Insert coin to continue.</p>
 									<Form
 										onSubmit={this.handleLogin}
 										id='loginForm'
@@ -101,7 +113,7 @@ class Login extends Component {
 											/>
 										</div>
 										<div className='formField'>
-											<Checkbox>Remember me</Checkbox>
+											{/* <Checkbox>Remember me</Checkbox> */}
 											<Button
 												type='primary'
 												htmlType='submit'
@@ -109,14 +121,13 @@ class Login extends Component {
 											>
 												Log in
 											</Button>
-											Or{' '}
-											<span
+											<p
 												className='regLink'
 												onClick={this.showLogin}
 												href=''
 											>
-												register now!
-											</span>
+												Or register now!
+											</p>
 										</div>
 									</Form>
 								</div>

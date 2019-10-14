@@ -49,99 +49,83 @@ class Registration extends Component {
 
 	render() {
 		return (
-			<Form
-				onSubmit={this.handleRegistration}
-				id='loginForm'
-				className='login-form'
-			>
-				<div className='formField'>
-					<Input
-						prefix={<Icon type='user' style={{ color: 'rgba(0,0,0,.25)' }} />}
-						onChange={this.handleFieldChange}
-						id='regUserName'
-						type='userName'
-						placeholder='User Name'
-						required=''
-						autoFocus=''
+			<>
+				<h1>
+					GHOST---pac
+									</h1>
+				<div className='landingLogoPlaceholder'>
+					<img
+						src='/images/insertCoin.gif'
+						alt='Smiley face'
+						height='auto'
+						width='350px'
+						z-index='-2'
 					/>
 				</div>
-				<div className='formField'>
-					<Input
-						prefix={<Icon type='user' style={{ color: 'rgba(0,0,0,.25)' }} />}
-						onChange={this.handleFieldChange}
-						type='name'
-						id='regName'
-						placeholder='Name'
-						required=''
-						autoFocus=''
-					/>
-				</div>
-				<div className='formField'>
-					<Input
-						prefix={<Icon type='lock' style={{ color: 'rgba(0,0,0,.25)' }} />}
-						onChange={this.handleFieldChange}
-						type='password'
-						id='regPassword'
-						placeholder='Password'
-						required=''
-					/>
-				</div>
-				<div className='formField'>
-					<Input
-						prefix={<Icon type='lock' style={{ color: 'rgba(0,0,0,.25)' }} />}
-						onChange={this.handleFieldChange}
-						type='password'
-						id='regPasswordConfirm'
-						placeholder='Confirm Password'
-						required=''
-					/>
-				</div>
-				<div className='formField'>
-					<Checkbox>Remember me</Checkbox>
-					<Button
-						type='primary'
-						htmlType='submit'
-						className='login-form-button'
-					>
-						Log in
+				<p className='insertCoin'>Register Now!</p>
+				<Form
+					onSubmit={this.handleRegistration}
+					id='loginForm'
+					className='login-form'
+				>
+					<div className='formField'>
+						<Input
+							prefix={<Icon type='user' style={{ color: 'rgba(0,0,0,.25)' }} />}
+							onChange={this.handleFieldChange}
+							id='regUserName'
+							type='userName'
+							placeholder='User Name'
+							required=''
+							autoFocus=''
+						/>
+					</div>
+					<div className='formField'>
+						<Input
+							prefix={<Icon type='user' style={{ color: 'rgba(0,0,0,.25)' }} />}
+							onChange={this.handleFieldChange}
+							type='name'
+							id='regName'
+							placeholder='Name'
+							required=''
+							autoFocus=''
+						/>
+					</div>
+					<div className='formField'>
+						<Input
+							prefix={<Icon type='lock' style={{ color: 'rgba(0,0,0,.25)' }} />}
+							onChange={this.handleFieldChange}
+							type='password'
+							id='regPassword'
+							placeholder='Password'
+							required=''
+						/>
+					</div>
+					<div className='formField'>
+						<Input
+							prefix={<Icon type='lock' style={{ color: 'rgba(0,0,0,.25)' }} />}
+							onChange={this.handleFieldChange}
+							type='password'
+							id='regPasswordConfirm'
+							placeholder='Confirm Password'
+							required=''
+						/>
+					</div>
+					<div className='formField'>
+						{/* <Checkbox>Remember me</Checkbox> */}
+						<Button
+							type='primary'
+							htmlType='submit'
+							className='login-form-button'
+						>
+							Log in
 					</Button>
-					Or{' '}
-					<span className='regLink' onClick={this.props.hideReg} href=''>
-						Go back to Login!
+						Or{' '}
+						<span className='regLink' onClick={this.props.hideReg} href=''>
+							Go back to Login!
 					</span>
-				</div>
-			</Form>
-
-			//             <input onChange={this.handleFieldChange}
-			//             type="userName"
-			//                 id="regUserName"
-			//                 placeholder="User Name"
-			//                 required="" autoFocus="" />
-
-			//             <input onChange={this.handleFieldChange}
-			//                 type="name"
-			//                 id="regName"
-			//                 placeholder="Name"
-			//                 required="" autoFocus="" />
-
-			//             <input onChange={this.handleFieldChange}
-			//                 type="password"
-			//                 id="regPassword"
-			//                 placeholder="Password"
-			//                 required="" />
-
-			//             <input onChange={this.handleFieldChange}
-			//                 type="password"
-			//                 id="regPasswordConfirm"
-			//                 placeholder="Confirm Password"
-			//                 required="" />
-
-			//         </div>
-			//         <button type="submit">
-			//             Sign Up
-			//         </button>
-
-			// </form>
+					</div>
+				</Form>
+			</>
 		);
 	}
 }
