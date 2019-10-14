@@ -20,7 +20,6 @@ class NavBar extends Component {
 			this.setState({
 				userName: data.name
 			});
-			console.log('working', data);
 		});
 	}
 
