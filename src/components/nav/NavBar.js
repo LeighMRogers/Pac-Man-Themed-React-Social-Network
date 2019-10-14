@@ -27,7 +27,13 @@ class NavBar extends Component {
 		console.log(this.state.userName);
 		return (
 			<div className='navWrapper'>
-				<div className='logoPlaceholder'></div>
+				<div className='logoPlaceholder'>
+					<img
+						height='153px'
+						width='145px'
+						src={`/images/ghost${this.props.activeUser}.png`}
+					></img>
+				</div>
 				<h2>GHOSTpac</h2>
 				<p>Welcome {this.state.userName}</p>
 				<nav>
