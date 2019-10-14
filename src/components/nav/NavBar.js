@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FriendsList from '../friends/FriendsList';
 import { Button } from 'antd';
+import AuthManager from '../../modules/AuthManager'
 
 class NavBar extends Component {
 	handleLogout = () => {
@@ -12,7 +13,9 @@ class NavBar extends Component {
 	render() {
 		return (
 			<div className='navWrapper'>
-				<div className='logoPlaceholder'></div>
+				<div className='logoPlaceholder'>
+				<img height='153px' width='145px' src={`/images/ghost${this.props.activeUser}.png`}></img>
+				</div>
 				<h2>GHOSTpac</h2>
 				<nav>
 					<ul className='nav nav-pills nav-fill'>
