@@ -12,7 +12,6 @@ export default {
 				});
 			})
 			.then(() => {
-				console.log(currentUserFriends);
 				let searchString = '';
 				currentUserFriends.forEach(id => {
 					searchString += `&userId=${id}`;
@@ -47,7 +46,6 @@ export default {
 		}).then(data => data.json());
 	},
 	get(id) {
-        return fetch(`${remoteURL}/messages/${id}`)
-            .then(result => result.json())
-    },
+		return fetch(`${remoteURL}/messages/${id}`).then(result => result.json());
+	}
 };

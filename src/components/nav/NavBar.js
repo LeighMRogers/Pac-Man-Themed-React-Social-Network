@@ -6,7 +6,6 @@ import { Button } from 'antd';
 
 class NavBar extends Component {
 	handleLogout = () => {
-		console.log('handleLogout is being called', this.props);
 		this.props.clearUser();
 		this.props.history.push('/');
 	};
@@ -43,7 +42,7 @@ class NavBar extends Component {
 						</li>
 					</ul>
 				</nav>
-				<FriendsList currentUserId={this.props.activeUser}/>
+				<FriendsList currentUserId={this.props.activeUser} />
 			</div>
 		);
 	}
