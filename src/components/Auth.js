@@ -35,7 +35,8 @@ class Auth extends Component {
     }
     render() {
         return (
-
+            <>
+            {/* <div className='landingLogoPlaceholder'></div> */}
                 <Nutshell
                 isAuthenticated={this.isAuthenticated}
                 clearUser={this.clearUser}
@@ -44,7 +45,7 @@ class Auth extends Component {
                 user={this.state.user}
                 {...this.props}
                 activeUser={this.state.activeUser}/>
-
+            </>
         )
     }
 }

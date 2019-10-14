@@ -26,7 +26,7 @@ class EditArticleForm extends React.Component {
 	};
 	onClose = () => {
 		this.setState({
-			visible: false
+			visible: false,
 		});
 	};
 
