@@ -7,7 +7,7 @@ class FriendSearchCard extends Component {
 		return (
 			<div>
 				<div>
-					<h6>Name: {this.props.friend.userName}</h6>
+					<h6>{this.props.friend.userName}</h6>
 					<button
 						type='button'
 						onClick={() => this.props.addFriend(this.props.friend.id)}

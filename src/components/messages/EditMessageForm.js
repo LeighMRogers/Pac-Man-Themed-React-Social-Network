@@ -1,13 +1,14 @@
 import React from 'react';
 import { Button, Form, Icon, Input,  } from 'antd';
 import MessagesManager from "../../modules/MessagesManager"
-
+import moment from "moment";
 class EditMessageForm extends React.Component {
     state = {
         visible: false,
         userId: "",
         date: "",
         message: "",
+        editTimeStamp: "",
         loadingStatus: true
     };
 
@@ -35,8 +36,10 @@ class EditMessageForm extends React.Component {
         this.setState({ loadingStatus: true });
         const editedMessage = {
             userId: this.state.userId,
+            //put edited date
             date: this.state.date,
             message: this.state.message,
+            editTimeStamp: moment(new Date()),
             id: this.props.id
         };
 
@@ -70,13 +73,13 @@ class EditMessageForm extends React.Component {
             <div className='addBtnContainer'>
                 <Form className='login-form'>
                     <div className="formField">
-                        <Input type="date"
+                        {/* <Input type="date"
                         required onChange={this.handleFieldChange}
                         id="date" placeholder="Date"
                         value={this.state.date}
                         prefix={
                             <Icon type='calendar' style={{ color: 'rgba(0,0,0,.25)' }} />
-                    }/>
+                    }/> */}
                     </div>
                     <div className="formField">
                         <Input type="text" required onChange={this.handleFieldChange} id="message" placeholder="Message" value={this.state.message} prefix={
