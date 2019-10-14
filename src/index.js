@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Auth from './components/Auth'
+import Auth from './components/Auth';
 import './index.css';
 import 'antd/dist/antd.css';
+import './fonts/PAC-FONT.TTF';
 
 ReactDOM.render(
 	<Router>

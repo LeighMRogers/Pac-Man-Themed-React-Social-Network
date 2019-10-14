@@ -5,16 +5,15 @@ import React, { Component } from 'react';
 class FriendCard extends Component {
 	render() {
 		return (
-			<div>
-				<div className='friendCard'>
-					<h6>Name: {this.props.friend.user.name}</h6>
-					<button
-						type='button'
-						onClick={() => this.props.deleteFriend(this.props.friend.id)}
-					>
-						Ghost
-					</button>
-				</div>
+			<div className='friendCardNav'>
+				<h6>{this.props.friend.user.name}</h6>
+				<button
+					type='button'
+					className='btn'
+					onClick={() => this.props.deleteFriend(this.props.friend.id)}
+				>
+					Ghost
+				</button>
 			</div>
 		);
 	}

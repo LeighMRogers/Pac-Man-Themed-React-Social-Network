@@ -18,48 +18,50 @@ class TaskList extends Component {
 	}
 
 	getData = () => {
-
 		TasksManager.getTasks(this.props.activeUser).then(tasks => {
 			this.setState({
 				tasks: tasks
 			});
 		});
-    };
+	};
 
-    showCompletedTask = ()=> {
-        TasksManager.getCompletedTasks(this.props.activeUser).then(tasks => {
+	showCompletedTask = () => {
+		TasksManager.getCompletedTasks(this.props.activeUser).then(tasks => {
 			this.setState({
 				tasks: tasks
 			});
 		});
-    }
+	};
 
-    showUncompletedTask = () => {
-        this.getData()
-    }
-
+	showUncompletedTask = () => {
+		this.getData();
+	};
 
 	render() {
 		return (
 			<div className='mainContainer'>
-				<h1>TASKS</h1>
-				<AddTaskForm getData={this.getData} />
-                <Button
-					className='addItemBtn'
-					type='success'
-					shape='round'
-					onClick={this.showCompletedTask}
-				>
-					Show Completed Tasks
-				</Button>
-                <Button
-					className='addItemBtn'
-					type='danger'
-					shape='round'
-					onClick={this.showUncompletedTask}
-				>
-					Show Uncompleted Tasks
-				</Button>
+				<div className='sectionHeader'>
+					<h1>TASKS</h1>
+					<AddTaskForm getData={this.getData} />
+				</div>
+				<div className='taskRow'>
+					<Button
+						className='addItemBtn'
+						type='primary'
+						shape='round'
+						onClick={this.showCompletedTask}
+					>
+						Done
+					</Button>
+					<Button
+						className='addItemBtn'
+						type='primary'
+						shape='round'
+						onClick={this.showUncompletedTask}
+					>
+						To-Do
+					</Button>
+				</div>
 				{this.state.tasks.map(task => (
 					<TaskCard
 						key={task.id}

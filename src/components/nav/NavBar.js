@@ -12,7 +12,7 @@ class NavBar extends Component {
 	render() {
 		return (
 			<div className='navWrapper'>
-				<div className='logoPlaceholder'>Logo Placeholder</div>
+				<div className='logoPlaceholder'></div>
 				<nav>
 					<ul className='nav nav-pills nav-fill'>
 						<li className='nav-item'>

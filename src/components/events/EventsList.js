@@ -29,8 +29,10 @@ class EventsList extends Component {
 	render() {
 		return (
 			<div className='mainContainer'>
-				<h1>EVENTS</h1>
-				<AddEventForm getData={this.getData} />
+				<div className='sectionHeader'>
+					<h1>EVENTS</h1>
+					<AddEventForm getData={this.getData} />
+				</div>
 				{this.state.events.map(event => (
 					<EventCard
 						key={event.id}
