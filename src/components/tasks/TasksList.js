@@ -41,7 +41,7 @@ class TaskList extends Component {
 		return (
 			<div className='mainContainer'>
 				<div className='sectionHeader'>
-					<h1>12333TASKS53369</h1>
+					<h1>TASKS</h1>
 					<AddTaskForm getData={this.getData} />
 				</div>
 				<div className='taskRow'>

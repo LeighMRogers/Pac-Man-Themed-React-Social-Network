@@ -90,7 +90,7 @@ class ArticleCard extends Component {
 									<p>date: {this.props.article.date}</p>
 									<img
 										className='cardImg'
-										src='/images/ghost2.png'
+										src={`/images/ghost${this.props.article.userId}.png`}
 										alt='Smiley face'
 										height='42'
 										width='42'

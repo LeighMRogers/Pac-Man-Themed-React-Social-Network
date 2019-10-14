@@ -76,6 +76,13 @@ class TaskCard extends Component {
 						<p>{this.props.task.user.name}</p>
 						<p>date: {this.props.task.dueDate}</p>
 						<p>completed: {this.props.task.completed}</p>
+						<img
+							className='cardImg'
+							src={`/images/ghost${this.props.task.userId}.png`}
+							alt='Smiley face'
+							height='42'
+							width='42'
+						/>
 					</div>
 				)}
 			</>

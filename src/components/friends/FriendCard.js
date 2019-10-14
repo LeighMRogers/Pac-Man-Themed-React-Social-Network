@@ -9,7 +9,7 @@ class FriendCard extends Component {
 			<div className='friendCardNav'>
 				<img
 					className='cardFriendImg'
-					src='/images/ghost2.png'
+					src={`/images/ghost${this.props.friend.userId}.png`}
 					alt='Smiley face'
 					height='42'
 					width='42'
