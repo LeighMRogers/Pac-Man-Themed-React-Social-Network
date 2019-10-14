@@ -24,11 +24,11 @@ class NavBar extends Component {
 	}
 
 	render() {
-		console.log(this.state.userName);
 		return (
 			<div className='navWrapper'>
 				<div className='logoPlaceholder'>
 					<img
+						alt='logo'
 						height='153px'
 						width='145px'
 						src={`/images/ghost${this.props.activeUser}.png`}
@@ -65,7 +65,11 @@ class NavBar extends Component {
 						</li>
 					</ul>
 				</nav>
-				<FriendsList currentUserId={this.props.activeUser} />
+				<FriendsList
+					currentUserId={this.props.activeUser}
+					{...this.props}
+					props={this.props}
+				/>
 			</div>
 		);
 	}

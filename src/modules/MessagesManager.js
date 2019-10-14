@@ -1,26 +1,10 @@
-import FriendsManager from './FriendsManager';
 const remoteURL = 'http://localhost:8088';
 
 export default {
-	getMessages(currentUserId) {
-		// let currentUserId = parseInt(sessionStorage.getItem('activeUser'));
-		let currentUserFriends = [];
-		return FriendsManager.getFriends(currentUserId)
-			.then(data => {
-				data.forEach(obj => {
-					currentUserFriends.push(obj.userId);
-				});
-			})
-			.then(() => {
-				let searchString = '';
-				currentUserFriends.forEach(id => {
-					searchString += `&userId=${id}`;
-				});
-
-				return fetch(
-					`http://localhost:8088/messages/?&_sort=date&_order=asc&_expand=user`
-				).then(response => response.json());
-			});
+	getMessages() {
+		return fetch(
+			`http://localhost:8088/messages/?&_sort=date&_order=asc&_expand=user`
+		).then(response => response.json());
 	},
 	delete(id) {
 		return fetch(`${remoteURL}/messages/${id}`, {

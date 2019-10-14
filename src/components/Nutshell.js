@@ -7,6 +7,27 @@ import { Spring } from 'react-spring/renderprops';
 // import Registration from './auth/Registration';
 
 class Nutshell extends Component {
+	state = {
+		refresh: 1
+	};
+
+	RefreshState = () => {
+		if (this.state.refresh === 1) {
+			this.setState({
+				refresh: 2
+			});
+		} else {
+			this.setState({
+				refresh: 1
+			});
+		}
+	};
+
+	// componentDidMount() {
+	// 	this.RefreshState();
+	// 	console.log('nutshell did mount');
+	// }
+
 	render() {
 		return (
 			<React.Fragment>
@@ -22,11 +43,12 @@ class Nutshell extends Component {
 									<NavBar
 										className='navBar'
 										currentUserId={this.props.activeUser}
-										// clearUser={props.clearUser}
+										refresh={this.RefreshState}
 										// user={props.user}
 										{...this.props}
 									/>
 									<ApplicationViews
+										key={this.state.refresh}
 										currentUserId={this.props.activeUser}
 										className='mainContainer'
 										// user={props.user}

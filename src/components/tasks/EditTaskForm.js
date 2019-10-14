@@ -1,5 +1,5 @@
 import React from 'react';
-import { Drawer, Button, Form, Icon, Input, Checkbox } from 'antd';
+import { Drawer, Button, Form, Icon, Input } from 'antd';
 import TaskManager from '../../modules/TasksManager';
 
 class EditTaskForm extends React.Component {

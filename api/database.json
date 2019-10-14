@@ -49,11 +49,6 @@
       "id": 12
     },
     {
-      "userId": 6,
-      "friendInitiate": 1,
-      "id": 22
-    },
-    {
       "userId": 2,
       "friendInitiate": 3,
       "id": 23
@@ -117,6 +112,16 @@
       "userId": 4,
       "friendInitiate": 1,
       "id": 39
+    },
+    {
+      "userId": 2,
+      "friendInitiate": 1,
+      "id": 41
+    },
+    {
+      "userId": 6,
+      "friendInitiate": 1,
+      "id": 42
     }
   ],
   "articles": [
@@ -312,6 +317,13 @@
       "completed": "yes",
       "userId": 5,
       "id": 8
+    },
+    {
+      "dueDate": "2019-10-11",
+      "title": "Fun Times!",
+      "completed": "no",
+      "userId": 1,
+      "id": 9
     }
   ]
 }

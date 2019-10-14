@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AuthManager from '../../modules/AuthManager';
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { Form, Icon, Input, Button } from 'antd';
 class Registration extends Component {
 	// Set initial state
 	state = {
@@ -50,9 +50,7 @@ class Registration extends Component {
 	render() {
 		return (
 			<>
-				<h1>
-					GHOST---pac
-									</h1>
+				<h1>GHOST---pac</h1>
 				<div className='landingLogoPlaceholder'>
 					<img
 						src='/images/insertCoin.gif'
@@ -118,7 +116,7 @@ class Registration extends Component {
 							className='login-form-button'
 						>
 							Log in
-					</Button>
+						</Button>
 						<p className='regLink' onClick={this.props.hideReg} href=''>
 							Go back to Login!
 						</p>
