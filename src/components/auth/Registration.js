@@ -119,10 +119,9 @@ class Registration extends Component {
 						>
 							Log in
 					</Button>
-						Or{' '}
-						<span className='regLink' onClick={this.props.hideReg} href=''>
+						<p className='regLink' onClick={this.props.hideReg} href=''>
 							Go back to Login!
-					</span>
+						</p>
 					</div>
 				</Form>
 			</>
