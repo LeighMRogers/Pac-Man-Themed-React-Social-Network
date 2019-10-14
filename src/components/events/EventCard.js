@@ -73,7 +73,7 @@ class EventCard extends Component {
 						<p>Location: {this.props.event.location}</p>
 						<img
 							className='cardImg'
-							src='/images/ghost2.png'
+							src={`/images/ghost${this.props.event.userId}.png`}
 							alt='Smiley face'
 							height='42'
 							width='42'

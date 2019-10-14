@@ -90,7 +90,7 @@ class MessageCard extends Component {
 								<div>
 									<img
 										className='cardImg'
-										src='/images/ghost2.png'
+										src={`/images/ghost${this.props.message.userId}.png`}
 										alt='Smiley face'
 										height='42'
 										width='42'
