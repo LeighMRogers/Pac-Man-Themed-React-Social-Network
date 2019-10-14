@@ -3,9 +3,7 @@
 import React, { Component } from 'react';
 
 class FriendSearchCard extends Component {
-
 	render() {
-        console.log("friends props", this.props)
 		return (
 			<div>
 				<div>
