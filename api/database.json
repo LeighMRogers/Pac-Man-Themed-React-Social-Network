@@ -117,6 +117,16 @@
       "userId": 4,
       "friendInitiate": 1,
       "id": 42
+    },
+    {
+      "userId": 6,
+      "friendInitiate": 3,
+      "id": 43
+    },
+    {
+      "userId": 1,
+      "friendInitiate": 3,
+      "id": 44
     }
   ],
   "articles": [
@@ -184,11 +194,11 @@
       "editTimeStamp": ""
     },
     {
-      "id": 4,
       "userId": 3,
       "date": "2019-09-03",
-      "message": "Yes!!  Cant wait.  BTW all - I just hit my steps goal for the month, WOO!!!",
-      "editTimeStamp": ""
+      "message": "Yes!!  Cant wait.  BTW all - I just hit my steps goal for the month, WACA WACA!  ",
+      "editTimeStamp": "2019-10-15T04:06:30.334Z",
+      "id": 4
     },
     {
       "userId": 1,

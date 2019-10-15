@@ -222,7 +222,7 @@ h2 {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
-	margin: 1em;
+	margin-top: 1em;
 	width: 100%;
 	align-items: center;
 	border: 1px solid #2121de;
@@ -236,6 +236,10 @@ h2 {
 
 .friendSearch input {
 	border-radius: 5px;
+}
+
+.friendSearchWrapper {
+	width: 100%;
 }
 
 .friendCardNav h6 {
