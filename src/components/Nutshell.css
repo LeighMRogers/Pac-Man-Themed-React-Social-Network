@@ -221,9 +221,21 @@ h2 {
 .friendSearchRow {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	margin: 1em;
 	width: 100%;
+	align-items: center;
+	border: 1px solid #2121de;
+	padding: 1em;
+	border-radius: 5px;
+}
+
+.friendSearchRow h5 {
+	margin: 0;
+}
+
+.friendSearch input {
+	border-radius: 5px;
 }
 
 .friendCardNav h6 {
