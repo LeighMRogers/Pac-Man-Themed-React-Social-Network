@@ -109,17 +109,12 @@
       "id": 38
     },
     {
-      "userId": 4,
-      "friendInitiate": 1,
-      "id": 39
-    },
-    {
       "userId": 2,
       "friendInitiate": 1,
       "id": 41
     },
     {
-      "userId": 6,
+      "userId": 4,
       "friendInitiate": 1,
       "id": 42
     }
@@ -198,8 +193,8 @@
     {
       "userId": 1,
       "date": "2019-09-03",
-      "message": "Congrats!!!!!!!!",
-      "editTimeStamp": "2019-10-14T18:19:21.571Z",
+      "message": "Congrats!!",
+      "editTimeStamp": "2019-10-15T03:48:03.959Z",
       "id": 5
     },
     {

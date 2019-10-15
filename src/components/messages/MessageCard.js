@@ -26,8 +26,8 @@ class MessageCard extends Component {
 			this.setState(
 				{
 					myCard: false
-				},
-				() => console.log('my card state', this.state)
+				}
+				// () => console.log('my card state', this.state)
 			);
 		}
 	}

@@ -15,7 +15,8 @@ import FriendsSearch from './FriendsSearch';
 class FriendsList extends Component {
 	//define what this component needs to render
 	state = {
-		friends: []
+		friends: [],
+		currentFriend: false
 	};
 
 	deleteFriend = id => {
@@ -34,14 +35,34 @@ class FriendsList extends Component {
 			userId: id,
 			friendInitiate: this.props.currentUserId
 		};
-		FriendsManager.post(newFriend).then(() => {
-			FriendsManager.getFriends(this.props.currentUserId).then(newFriends => {
-				this.setState({
-					friends: newFriends
-					//call a set state function for all modules
-				});
-				this.props.refresh();
+		FriendsManager.getFriends(this.props.currentUserId).then(data => {
+			data.forEach(obj => {
+				if (obj.userId === id) {
+					this.setState({
+						currentFriend: true
+					});
+				}
 			});
+
+			if (newFriend.userId === this.props.currentUserId) {
+				alert(
+					'You can pick your nose, and you can pick your friends, but you cant add yourself!'
+				);
+			} else if (this.state.currentFriend === true) {
+				alert('You are already friends, dum dum');
+			} else {
+				FriendsManager.post(newFriend).then(() => {
+					FriendsManager.getFriends(this.props.currentUserId).then(
+						newFriends => {
+							this.setState({
+								friends: newFriends
+								//call a set state function for all modules
+							});
+							this.props.refresh();
+						}
+					);
+				});
+			}
 		});
 	};
 

@@ -79,7 +79,7 @@ class EditMessageForm extends React.Component {
 
 				<Drawer
 					width='350'
-					title='Edit News'
+					title='Edit Message'
 					placement='right'
 					closable={false}
 					onClose={this.onClose}

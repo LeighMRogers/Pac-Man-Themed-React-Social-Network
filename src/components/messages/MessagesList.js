@@ -9,12 +9,21 @@ class MessagesList extends Component {
 		messages: []
 	};
 
+	//function for scrolling 5000px down from top
+	scrollToMyRef = () => {
+		window.scrollTo({
+			top: 5000,
+			behavior: 'smooth'
+		});
+	};
+
 	componentDidMount() {
 		//getAll from AnimalManager and hang on to that data; put it in state
 		MessagesManager.getMessages(this.props.activeUser).then(messages => {
 			this.setState({
 				messages: messages
 			});
+			this.scrollToMyRef();
 		});
 	}
 
@@ -23,6 +32,7 @@ class MessagesList extends Component {
 			this.setState({
 				messages: messages
 			});
+			this.scrollToMyRef();
 		});
 	};
 
@@ -40,7 +50,7 @@ class MessagesList extends Component {
 						getData={this.getData}
 					/>
 				))}
-				<AddMessageForm getData={this.getData} />
+				<AddMessageForm ref={this.myRef} getData={this.getData} />
 			</div>
 		);
 	}
