@@ -313,6 +313,7 @@ nav {
 	margin-bottom: 2em;
 }
 
-.ant-drawer-wrapper-body {
-	overflow: hidden;
+.ant-drawer-wrapper-body,
+.ant-drawer-content {
+	overflow: hidden !important;
 }

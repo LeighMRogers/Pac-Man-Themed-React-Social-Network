@@ -14,16 +14,6 @@ class ArticleCard extends Component {
 		});
 	};
 
-	// getData = () => {
-
-	// 	ArticleManager.getArticles(this.props.activeUser).then(articles => {
-	// 		console.log('articles array', articles);
-	// 		this.setState({
-	// 			articles: this.props.articles
-	// 		});
-	// 	});
-	// };
-
 	componentDidMount() {
 		if (
 			parseInt(sessionStorage.getItem('activeUser')) ===
@@ -59,7 +49,15 @@ class ArticleCard extends Component {
 											<span>{this.props.article.title}</span>
 										</h3>
 										<p>Summary: {this.props.article.summary}</p>
-										<p><a href={this.props.article.url} target="_blank">{this.props.article.url}</a></p>
+										<p>
+											<a
+												href={this.props.article.url}
+												rel='noopener noreferrer'
+												target='_blank'
+											>
+												{this.props.article.url}
+											</a>
+										</p>
 										<p>date: {this.props.article.date}</p>
 										<div className='cardButtonRow'>
 											<EditArticleForm
@@ -86,7 +84,15 @@ class ArticleCard extends Component {
 									</h3>
 									<p>{this.props.article.user.name}</p>
 									<p>Summary: {this.props.article.summary}</p>
-									<p><a href={this.props.article.url} target="_blank">{this.props.article.url}</a></p>
+									<p>
+										<a
+											href={this.props.article.url}
+											rel='noopener noreferrer'
+											target='_blank'
+										>
+											{this.props.article.url}
+										</a>
+									</p>
 									<p>date: {this.props.article.date}</p>
 									<img
 										className='cardImg'

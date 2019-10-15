@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import AuthManager from '../../modules/AuthManager';
 import Registration from '../auth/Registration';
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
-import { Link, withRouter } from 'react-router-dom';
+import { Form, Icon, Input, Button } from 'antd';
+import { withRouter } from 'react-router-dom';
 import { Spring } from 'react-spring/renderprops';
 
 class Login extends Component {
@@ -63,17 +63,15 @@ class Login extends Component {
 						>
 							{props => (
 								<div style={props}>
-									<h1>
-										GHOST---pac
-									</h1>
+									<h1>GHOST---pac</h1>
 									<div className='landingLogoPlaceholder'>
-									<img
-										src='/images/insertCoin.gif'
-										alt='Smiley face'
-										height='auto'
-										width='350px'
-										z-index= '-2'
-									/>
+										<img
+											src='/images/insertCoin.gif'
+											alt='Smiley face'
+											height='auto'
+											width='350px'
+											z-index='-2'
+										/>
 									</div>
 									<p className='insertCoin'>Insert coin to continue.</p>
 									<Form
@@ -121,11 +119,7 @@ class Login extends Component {
 											>
 												Log in
 											</Button>
-											<p
-												className='regLink'
-												onClick={this.showLogin}
-												href=''
-											>
+											<p className='regLink' onClick={this.showLogin} href=''>
 												Or register now!
 											</p>
 										</div>

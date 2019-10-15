@@ -24,6 +24,7 @@ class FriendsList extends Component {
 				this.setState({
 					friends: newFriends
 				});
+				this.props.refresh();
 			});
 		});
 	};
@@ -39,6 +40,7 @@ class FriendsList extends Component {
 					friends: newFriends
 					//call a set state function for all modules
 				});
+				this.props.refresh();
 			});
 		});
 	};

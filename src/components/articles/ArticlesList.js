@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ArticleManager from '../../modules/ArticleManager';
 import ArticleCard from './ArticleCard';
 import AddArticleForm from '../articles/AddArticleForm';
-import { Spring } from 'react-spring/renderprops';
 
 class ArticleList extends Component {
 	//define what this component needs to render
